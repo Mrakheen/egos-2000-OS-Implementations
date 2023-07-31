@@ -100,3 +100,8 @@ void tty_init() {
     earth->tty_success = tty_success;
     earth->tty_critical = tty_critical;
 }
+
+
+
+
+

@@ -11,10 +11,12 @@
 #include "egos.h"
 #include "process.h"
 #include "syscall.h"
+//#include "queue.h"
 #include <string.h>
 
 #define INTR_ID_SOFT       3
 #define INTR_ID_TIMER      7
+#define NUM_PRIORITY_LEVELS 10
 
 static void proc_yield();
 static void proc_syscall();
@@ -56,14 +58,18 @@ void ctx_entry() {
 
     /* Student's code goes here (page table translation). */
     /* Save the interrupt stack */
+
     /* Student's code ends here. */
 
     /* kernel_entry() is either proc_yield() or proc_syscall() */
     kernel_entry();
 
+
     /* Student's code goes here (page table translation). */
     /* Restore the interrupt stack */
+
     /* Student's code ends here. */
+
 
     /* Switch back to the user application stack */
     mepc = (int)proc_set[proc_curr_idx].mepc;
@@ -74,13 +80,21 @@ void ctx_entry() {
 static void proc_yield() {
     /* Find the next runnable process */
     int next_idx = -1;
-    for (int i = 1; i <= MAX_NPROCESS; i++) {
-        int s = proc_set[(proc_curr_idx + i) % MAX_NPROCESS].status;
-        if (s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
-            next_idx = (proc_curr_idx + i) % MAX_NPROCESS;
-            break;
+
+    //#ifdef 1
+    //Round-Robin Scheduler
+        for (int i = 1; i <= MAX_NPROCESS; i++) {
+            int s = proc_set[(proc_curr_idx + i) % MAX_NPROCESS].status;
+            if (s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
+                next_idx = (proc_curr_idx + i) % MAX_NPROCESS;
+                proc_set[i].numOfContext++;
+                break;
+            }
         }
-    }
+   // #else 
+  
+         
+   // #endif */
 
     if (next_idx == -1) FATAL("proc_yield: no runnable process");
     if (curr_status == PROC_RUNNING) proc_set_runnable(curr_pid);
@@ -91,7 +105,6 @@ static void proc_yield() {
     timer_reset();
 
     /* Student's code goes here (switch privilege level). */
-
     /* Modify mstatus.MPP to enter machine or user mode during mret
      * depending on whether curr_pid is a grass server or a user app
      */
@@ -187,3 +200,7 @@ static void proc_syscall() {
         FATAL("proc_syscall: got unknown syscall type=%d", type);
     }
 }
+
+
+
+ 

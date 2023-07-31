@@ -45,7 +45,6 @@ void proc_init() {
     /* The first process is currently running */
     proc_set_running(proc_alloc());
 }
-
 static void proc_set_status(int pid, int status) {
     for (int i = 0; i < MAX_NPROCESS; i++)
         if (proc_set[i].pid == pid) proc_set[i].status = status;
@@ -53,15 +52,25 @@ static void proc_set_status(int pid, int status) {
 
 int proc_alloc() {
     static int proc_nprocs = 0;
-    for (int i = 0; i < MAX_NPROCESS; i++)
+    for (int i = 0; i < MAX_NPROCESS; i++) {
         if (proc_set[i].status == PROC_UNUSED) {
             proc_set[i].pid = ++proc_nprocs;
             proc_set[i].status = PROC_LOADING;
+
+            // Assign default priority based on process type
+            if (proc_nprocs <= 4) {
+                proc_set[i].priLevel = 1;  // Kernel process
+            } else {
+                proc_set[i].priLevel = 2;  // User process
+            }
+
             return proc_nprocs;
         }
+    }
 
-    FATAL("proc_alloc: reach the limit of %d processes", MAX_NPROCESS);
+    FATAL("proc_alloc: reached the limit of %d processes", MAX_NPROCESS);
 }
+
 
 void proc_free(int pid) {
     if (pid != -1) {
@@ -84,3 +93,24 @@ void proc_set_running(int pid) { proc_set_status(pid, PROC_RUNNING); }
 void proc_set_runnable(int pid) { proc_set_status(pid, PROC_RUNNABLE); }
 int  proc_get_pid( ){ return curr_pid; }
 struct process * proc_get_proc_set( ){ return &proc_set[0];}
+
+void proc_set_prio(int pid, int priority)
+{
+    if(pid >= 0 && pid < MAX_NPROCESS)
+    {
+        if(priority <= 10 && priority >= 1)
+        {
+        proc_set[pid].priLevel = priority;
+        }
+        else
+        {
+            printf("invalid priority level");
+        }
+    }
+    else
+    {
+        printf("invalid pid");
+    } 
+    
+    
+} 

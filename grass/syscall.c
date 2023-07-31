@@ -45,3 +45,6 @@ void sys_exit(int status) {
     req.type = PROC_EXIT;
     sys_send(GPID_PROCESS, (void*)&req, sizeof(req));
 }
+
+
+

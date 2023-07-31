@@ -32,6 +32,9 @@ int main() {
     grass->proc_get_pid = proc_get_pid;
     grass->proc_get_proc_set = proc_get_proc_set;
 
+    
+    grass->proc_set_prio = proc_set_prio;
+
     grass->sys_exit = sys_exit;
     grass->sys_send = sys_send;
     grass->sys_recv = sys_recv;
