@@ -38,7 +38,7 @@ char* kernel_processes[] = {
 #12:/bin/clock     #13:/bin/crash1          #14:/bin/crash2   #15:/bin/ult
 #16:/bin/ps        #17:/bin/kill            #18:/bin/test_pri
 */
-#define NINODE 20
+#define NINODE 19
 char* contents[] = {
                     "./   0 ../   0 home/   1 bin/   6 ",
                     "./   1 ../   0 cse3320/   2 rvr/   3 tbakker/   4 ",
@@ -46,7 +46,7 @@ char* contents[] = {
                     "./   3 ../   1 ",
                     "./   4 ../   1 ",
                     "With only 2000 lines of code, egos-2000 implements boot loader, microSD driver, tty driver, memory paging, address translation, interrupt handling, process scheduling and messaging, system call, file system, shell, 7 user commands and the `mkfs/mkrom` tools.",
-                    "./   6 ../   0 echo   7 cat   8 ls   9 cd  10 pwd  11 clock  12 crash1  13 crash2  14 ult  15 ps 16, priority 17, kill 18, test_pri 19",
+                    "./   6 ../   0 echo   7 cat   8 ls   9 cd  10 pwd  11 clock  12 crash1  13 crash2  14 ult  15 ps 16 priority  17 kill  18 test_pri  19",
                     "#../build/release/echo.elf",
                     "#../build/release/cat.elf",
                     "#../build/release/ls.elf",
