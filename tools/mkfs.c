@@ -38,7 +38,7 @@ char* kernel_processes[] = {
 #12:/bin/clock     #13:/bin/crash1          #14:/bin/crash2   #15:/bin/ult
 #16:/bin/ps        #17:/bin/kill            #18:/bin/test_pri
 */
-#define NINODE 19
+#define NINODE 20
 char* contents[] = {
                     "./   0 ../   0 home/   1 bin/   6 ",
                     "./   1 ../   0 cse3320/   2 rvr/   3 tbakker/   4 ",
