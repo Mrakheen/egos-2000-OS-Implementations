@@ -11,6 +11,8 @@
 #include "process.h"
 #include "syscall.h"
 #include <string.h>
+#include <stdlib.h>
+#include <math.h>
 
 void intr_entry(int id);
 
@@ -52,6 +54,10 @@ static void proc_set_status(int pid, int status) {
 
 int proc_alloc() {
     static int proc_nprocs = 0;
+    int random = 0;
+    while(random <10){
+        random = rand();
+    }
     for (int i = 0; i < MAX_NPROCESS; i++) {
         if (proc_set[i].status == PROC_UNUSED) {
             proc_set[i].pid = ++proc_nprocs;
@@ -64,7 +70,7 @@ int proc_alloc() {
                 proc_set[i].priLevel = 2;  // User process
             }
 
-            proc_set[i].num_of_Tickets = proc_set[i].priLevel*1899;
+            proc_set[i].num_of_Tickets = round(random/proc_set[i].priLevel);
 
             return proc_nprocs;
         }
@@ -103,7 +109,11 @@ void proc_set_prio(int pid, int priority)
         if(priority <= 10 && priority >= 1)
         {
             proc_set[pid].priLevel = priority;
-            proc_set[pid].num_of_Tickets = proc_set[pid].priLevel*1899;
+            int random = 0;
+            while(random <10){
+                random = rand();
+            }
+            proc_set[pid].num_of_Tickets = round(random/proc_set[pid].priLevel);
         }
         else
         {

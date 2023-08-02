@@ -114,14 +114,20 @@ static void proc_yield() {
 
             int cumulative_tickets = 0;
 
-            for (int i = 0; i < MAX_NPROCESS; i++) {
-                int s = proc_set[i].status;
+            int j=0;
+            while(j < MAX_NPROCESS) {
+                int s = proc_set[j].status;
                 if (s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
-                    cumulative_tickets += proc_set[i].num_of_Tickets;
+                    cumulative_tickets += proc_set[j].num_of_Tickets;
                     if (cumulative_tickets > winning_ticket) {
-                        next_idx = i;
+                        next_idx = j;
                         break;
                     }
+                }
+                j++;
+
+                if(j >= MAX_NPROCESS && next_idx == -1){
+                    j=0;
                 }
             }
         }

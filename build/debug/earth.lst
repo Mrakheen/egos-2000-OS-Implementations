@@ -3250,7 +3250,7 @@ load_app():
 20402ae0:	1bd010ef          	jal	ra,2040449c <memset>
 20402ae4:	fe842703          	lw	a4,-24(s0)
 20402ae8:	000087b7          	lui	a5,0x8
-20402aec:	00778793          	addi	a5,a5,7 # 8007 <data_start-0x7ff7ff9>
+20402aec:	00878793          	addi	a5,a5,8 # 8008 <data_start-0x7ff7ff8>
 20402af0:	f8e7f8e3          	bgeu	a5,a4,20402a80 <load_app+0x1c0>
 20402af4:	080017b7          	lui	a5,0x8001
 20402af8:	9a87a783          	lw	a5,-1624(a5) # 80009a8 <earth>

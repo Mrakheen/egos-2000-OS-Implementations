@@ -309,7 +309,7 @@ load_app():
  800533c:	315000ef          	jal	ra,8005e50 <memset>
  8005340:	fe842703          	lw	a4,-24(s0)
  8005344:	000087b7          	lui	a5,0x8
- 8005348:	00778793          	addi	a5,a5,7 # 8007 <__heap_size+0x7807>
+ 8005348:	00878793          	addi	a5,a5,8 # 8008 <__heap_size+0x7808>
  800534c:	f8e7f8e3          	bgeu	a5,a4,80052dc <load_app+0x1c0>
  8005350:	080077b7          	lui	a5,0x8007
  8005354:	a947a783          	lw	a5,-1388(a5) # 8006a94 <earth>
