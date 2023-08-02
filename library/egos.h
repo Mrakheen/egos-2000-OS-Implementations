@@ -42,6 +42,7 @@ struct grass {
     void (*proc_set_ready)(int pid);
     int  (*proc_get_pid)();
     void (*proc_set_prio)(int pid, int prio);
+    void (*proc_set_ticket)(int pid, int num_of_tickets);
     struct process *(*proc_get_proc_set)();
 
     long long int (*gettime)();
@@ -67,7 +68,7 @@ extern struct grass *grass;
 #define APPS_ARG           0x80000000  /* 1KB    app main() argc, argv */
 #define APPS_SIZE          0x00003000  
 #define APPS_ENTRY         0x08005000  /* 12KB   app code+data         */
-#define GRASS_SIZE         0x00002900
+#define GRASS_SIZE         0x00003000
 #define GRASS_ENTRY        0x08002800  /* 8KB    grass code+data       */
                                        /* 12KB   earth data            */
                                        /* earth code is in QSPI flash  */

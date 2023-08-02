@@ -21,9 +21,10 @@ struct process{
                        * + machine exception program counter (mepc) */
     /* Student's code goes here to add to the process control block (priority / scheduler)*/
     int numOfContext;
+    //For Round Robin Scheduler
     int priLevel;
-    //int priLevelKernel;
-    int agedPriority;
+    //For Lottery Scheduler   
+    int num_of_Tickets;
 };
 
 #define MAX_NPROCESS  16
@@ -44,7 +45,10 @@ void proc_set_running (int);
 void proc_set_runnable (int);
 int  proc_get_pid( );
 
+//For Round Robin Scheduler
 void proc_set_prio(int pid, int prio);
+//For Lottery Scheduler
+void proc_set_ticket(int pid, int num_of_tickets);
 
 
 struct process * proc_get_proc_set( );

@@ -12,6 +12,7 @@
 #include "process.h"
 #include "syscall.h"
 //#include "queue.h"
+#include <stdlib.h>
 #include <string.h>
 
 #define INTR_ID_SOFT       3
@@ -81,8 +82,8 @@ static void proc_yield() {
     /* Find the next runnable process */
     int next_idx = -1;
 
-    //#ifdef 1
-    //Round-Robin Scheduler
+    #ifdef ROUNDROBIN
+        //Round-Robin Scheduler
         for (int i = 1; i <= MAX_NPROCESS; i++) {
             int s = proc_set[(proc_curr_idx + i) % MAX_NPROCESS].status;
             if (s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
@@ -91,10 +92,41 @@ static void proc_yield() {
                 break;
             }
         }
-   // #else 
-  
-         
-   // #endif */
+   #else 
+        //Lottery Scheduler
+        int total_tickets = 0;
+        int runnable_processes = 0;
+        for (int i = 0; i < MAX_NPROCESS; i++) {
+            int s = proc_set[i].status;
+            if (s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
+                total_tickets += proc_set[i].num_of_Tickets;
+                runnable_processes++;
+            }
+        }
+
+        if (total_tickets > 0 && runnable_processes > 0) {
+            // Perform a lottery draw for winning ticket
+            int random=0;
+            while(random == 0 || random > total_tickets || random < 0){
+                random = rand();
+            }
+            int winning_ticket = random % total_tickets;
+
+            int cumulative_tickets = 0;
+
+            for (int i = 0; i < MAX_NPROCESS; i++) {
+                int s = proc_set[i].status;
+                if (s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
+                    cumulative_tickets += proc_set[i].num_of_Tickets;
+                    if (cumulative_tickets > winning_ticket) {
+                        next_idx = i;
+                        break;
+                    }
+                }
+            }
+        }
+                
+   #endif
 
     if (next_idx == -1) FATAL("proc_yield: no runnable process");
     if (curr_status == PROC_RUNNING) proc_set_runnable(curr_pid);

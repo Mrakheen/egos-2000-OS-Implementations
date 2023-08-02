@@ -62,6 +62,13 @@ CFLAGS = -march=rv32i -mabi=ilp32 -mcmodel=medlow -ffunction-sections -fdata-sec
 LDFLAGS = -Wl,--gc-sections -nostartfiles -nostdlib
 INCLUDE = -Ilibrary -Ilibrary/elf -Ilibrary/libc -Ilibrary/file -Ilibrary/servers -Ilibrary/queue
 
+# The SCHEDULER macro defined based on the command-line argument
+ifeq ($(scheduler), lottery)
+    CFLAGS += -DLOTTERY_SCHEDULER
+else
+    CFLAGS += -DROUNDROBIN
+endif
+
 COMMON = $(CFLAGS) $(LDFLAGS) $(INCLUDE) -D CPU_CLOCK_RATE=65000000
 
 APPS_LD = -Tapps/app.lds -lc -lgcc

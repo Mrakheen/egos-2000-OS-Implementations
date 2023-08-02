@@ -64,6 +64,8 @@ int proc_alloc() {
                 proc_set[i].priLevel = 2;  // User process
             }
 
+            proc_set[i].num_of_Tickets = proc_set[i].priLevel*1899;
+
             return proc_nprocs;
         }
     }
@@ -81,8 +83,7 @@ void proc_free(int pid) {
 
     /* Free all user applications */
     for (int i = 0; i < MAX_NPROCESS; i++)
-        if (proc_set[i].pid >= GPID_USER_START &&
-            proc_set[i].status != PROC_UNUSED) {
+        if (proc_set[i].pid >= GPID_USER_START && proc_set[i].status != PROC_UNUSED) {
             earth->mmu_free(proc_set[i].pid);
             proc_set[i].status = PROC_UNUSED;
         }
@@ -94,13 +95,15 @@ void proc_set_runnable(int pid) { proc_set_status(pid, PROC_RUNNABLE); }
 int  proc_get_pid( ){ return curr_pid; }
 struct process * proc_get_proc_set( ){ return &proc_set[0];}
 
+//For Round Robin Scheduler
 void proc_set_prio(int pid, int priority)
 {
     if(pid >= 0 && pid < MAX_NPROCESS)
     {
         if(priority <= 10 && priority >= 1)
         {
-        proc_set[pid].priLevel = priority;
+            proc_set[pid].priLevel = priority;
+            proc_set[pid].num_of_Tickets = proc_set[pid].priLevel*1899;
         }
         else
         {
@@ -110,7 +113,18 @@ void proc_set_prio(int pid, int priority)
     else
     {
         printf("invalid pid");
-    } 
-    
-    
+    }     
 } 
+
+//For Lottery Scheduler
+void proc_set_ticket(int pid, int num_of_tickets) {
+    if (pid >= 0 && pid < MAX_NPROCESS) {
+        proc_set[pid].num_of_Tickets = num_of_tickets;
+    } else {
+        printf("Invalid pid\n");
+    }
+}
+
+
+
+

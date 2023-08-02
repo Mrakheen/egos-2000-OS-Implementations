@@ -48,7 +48,7 @@ SYMBOL TABLE:
 080051f0 l     F .text	00000044 log_shift_r
 08005234 l     F .text	00000134 treedisk_get_snapshot
 08005368 l     F .text	000001a8 treedisk_alloc_block
-08007774 l     O .bss	00000004 count.2500
+08007774 l     O .bss	00000004 count.2503
 08005510 l     F .text	00000064 treedisk_getsize
 08005574 l     F .text	0000002c treedisk_setsize
 080055a0 l     F .text	000001bc treedisk_read
@@ -353,10 +353,10 @@ treedisk_alloc_block():
  8005378:	dca42e23          	sw	a0,-548(s0)
  800537c:	dcb42c23          	sw	a1,-552(s0)
  8005380:	080077b7          	lui	a5,0x8007
- 8005384:	7747a783          	lw	a5,1908(a5) # 8007774 <count.2500>
+ 8005384:	7747a783          	lw	a5,1908(a5) # 8007774 <count.2503>
  8005388:	00178713          	addi	a4,a5,1
  800538c:	080077b7          	lui	a5,0x8007
- 8005390:	76e7aa23          	sw	a4,1908(a5) # 8007774 <count.2500>
+ 8005390:	76e7aa23          	sw	a4,1908(a5) # 8007774 <count.2503>
  8005394:	dd842783          	lw	a5,-552(s0)
  8005398:	0047a783          	lw	a5,4(a5)
  800539c:	fef42223          	sw	a5,-28(s0)
@@ -1009,7 +1009,7 @@ exit():
  8005d64:	fea42623          	sw	a0,-20(s0)
  8005d68:	080077b7          	lui	a5,0x8007
  8005d6c:	75c7a783          	lw	a5,1884(a5) # 800775c <grass>
- 8005d70:	0a07a783          	lw	a5,160(a5)
+ 8005d70:	0a47a783          	lw	a5,164(a5)
  8005d74:	fec42503          	lw	a0,-20(s0)
  8005d78:	000780e7          	jalr	a5
  8005d7c:	0000006f          	j	8005d7c <exit+0x28>
@@ -1053,7 +1053,7 @@ main():
  8005e08:	00e7ae23          	sw	a4,28(a5)
  8005e0c:	080077b7          	lui	a5,0x8007
  8005e10:	75c7a783          	lw	a5,1884(a5) # 800775c <grass>
- 8005e14:	0a47a703          	lw	a4,164(a5)
+ 8005e14:	0a87a703          	lw	a4,168(a5)
  8005e18:	be040793          	addi	a5,s0,-1056
  8005e1c:	02000613          	li	a2,32
  8005e20:	00078593          	mv	a1,a5
@@ -1065,7 +1065,7 @@ main():
  8005e38:	fef42223          	sw	a5,-28(s0)
  8005e3c:	080077b7          	lui	a5,0x8007
  8005e40:	75c7a783          	lw	a5,1884(a5) # 800775c <grass>
- 8005e44:	0a87a683          	lw	a3,168(a5)
+ 8005e44:	0ac7a683          	lw	a3,172(a5)
  8005e48:	be040713          	addi	a4,s0,-1056
  8005e4c:	bdc40793          	addi	a5,s0,-1060
  8005e50:	40000613          	li	a2,1024
@@ -1097,7 +1097,7 @@ main():
  8005eb8:	00e7a023          	sw	a4,0(a5)
  8005ebc:	080077b7          	lui	a5,0x8007
  8005ec0:	75c7a783          	lw	a5,1884(a5) # 800775c <grass>
- 8005ec4:	0a47a703          	lw	a4,164(a5)
+ 8005ec4:	0a87a703          	lw	a4,168(a5)
  8005ec8:	bdc42783          	lw	a5,-1060(s0)
  8005ecc:	20400613          	li	a2,516
  8005ed0:	fe442583          	lw	a1,-28(s0)
