@@ -59,7 +59,7 @@ extern struct grass *grass;
 /* Memory layout */
 #define PAGE_SIZE          4096
 #define FRAME_CACHE_END    0x80020000
-#define FRAME_CACHE_START  0x80004000  /* 112KB  frame cache           */
+#define FRAME_CACHE_START  0x80008000  /* 112KB  frame cache           */
                                        /*        earth interface       */
 #define GRASS_STACK_TOP    0x80003f80  /* 8KB    earth/grass stack     */
                                        /*        grass interface       */
@@ -67,8 +67,8 @@ extern struct grass *grass;
 #define SYSCALL_ARG        0x80000400  /* 1KB    system call args      */
 #define APPS_ARG           0x80000000  /* 1KB    app main() argc, argv */
 #define APPS_SIZE          0x00004000  
-#define APPS_ENTRY         0x08005000  /* 12KB   app code+data         */
-#define GRASS_SIZE         0x00003000
+#define APPS_ENTRY         0x08006200  /* 12KB   app code+data         */
+#define GRASS_SIZE         0x00003300
 #define GRASS_ENTRY        0x08002800  /* 8KB    grass code+data       */
                                        /* 12KB   earth data            */
                                        /* earth code is in QSPI flash  */

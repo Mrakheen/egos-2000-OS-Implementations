@@ -3,32 +3,32 @@ build/release/kill.elf:     file format elf32-littleriscv
 build/release/kill.elf
 architecture: riscv:rv32, flags 0x00000112:
 EXEC_P, HAS_SYMS, D_PAGED
-start address 0x08005000
+start address 0x08006200
 
 Program Header:
-    LOAD off    0x00001000 vaddr 0x08005000 paddr 0x08005000 align 2**12
+    LOAD off    0x00000200 vaddr 0x08006200 paddr 0x08006200 align 2**12
          filesz 0x00000d5c memsz 0x00001968 flags rwx
 
 Sections:
 Idx Name              Size      VMA       LMA       File off  Algn  Flags
-  0 .text             00000754  08005000  08005000  00001000  2**3  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .rodata           000001d0  08005758  08005758  00001758  2**3  CONTENTS, ALLOC, LOAD, READONLY, DATA
-  2 .data             00000434  08005928  08005928  00001928  2**3  CONTENTS, ALLOC, LOAD, DATA
-  3 .bss              00000404  08005d60  08005d60  00001d5c  2**3  ALLOC
-  4 .heap             00000800  08006168  08006168  00001d5c  2**3  ALLOC
-  5 .riscv.attributes 0000001c  00000000  00000000  00001d5c  2**0  CONTENTS, READONLY
-  6 .comment          00000028  00000000  00000000  00001d78  2**0  CONTENTS, READONLY
-  7 .debug_line       00000202  00000000  00000000  00001da0  2**0  CONTENTS, READONLY, DEBUGGING
-  8 .debug_info       0000004c  00000000  00000000  00001fa2  2**0  CONTENTS, READONLY, DEBUGGING
-  9 .debug_abbrev     00000028  00000000  00000000  00001fee  2**0  CONTENTS, READONLY, DEBUGGING
- 10 .debug_aranges    00000040  00000000  00000000  00002018  2**3  CONTENTS, READONLY, DEBUGGING
- 11 .debug_str        00000141  00000000  00000000  00002058  2**0  CONTENTS, READONLY, DEBUGGING
+  0 .text             00000754  08006200  08006200  00000200  2**3  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .rodata           000001d0  08006958  08006958  00000958  2**3  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .data             00000434  08006b28  08006b28  00000b28  2**3  CONTENTS, ALLOC, LOAD, DATA
+  3 .bss              00000404  08006f60  08006f60  00000f5c  2**3  ALLOC
+  4 .heap             00000800  08007368  08007368  00000f5c  2**3  ALLOC
+  5 .riscv.attributes 0000001c  00000000  00000000  00000f5c  2**0  CONTENTS, READONLY
+  6 .comment          00000028  00000000  00000000  00000f78  2**0  CONTENTS, READONLY
+  7 .debug_line       00000202  00000000  00000000  00000fa0  2**0  CONTENTS, READONLY, DEBUGGING
+  8 .debug_info       0000004c  00000000  00000000  000011a2  2**0  CONTENTS, READONLY, DEBUGGING
+  9 .debug_abbrev     00000028  00000000  00000000  000011ee  2**0  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_aranges    00000040  00000000  00000000  00001218  2**3  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str        00000141  00000000  00000000  00001258  2**0  CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
-08005000 l    d  .text	00000000 .text
-08005758 l    d  .rodata	00000000 .rodata
-08005928 l    d  .data	00000000 .data
-08005d60 l    d  .bss	00000000 .bss
-08006168 l    d  .heap	00000000 .heap
+08006200 l    d  .text	00000000 .text
+08006958 l    d  .rodata	00000000 .rodata
+08006b28 l    d  .data	00000000 .data
+08006f60 l    d  .bss	00000000 .bss
+08007368 l    d  .heap	00000000 .heap
 00000000 l    d  .riscv.attributes	00000000 .riscv.attributes
 00000000 l    d  .comment	00000000 .comment
 00000000 l    d  .debug_line	00000000 .debug_line
@@ -37,608 +37,608 @@ SYMBOL TABLE:
 00000000 l    d  .debug_aranges	00000000 .debug_aranges
 00000000 l    d  .debug_str	00000000 .debug_str
 00000000 l    df *ABS*	00000000 servers.c
-08005d60 l     O .bss	00000004 sender
-08005d64 l     O .bss	00000400 buf
+08006f60 l     O .bss	00000004 sender
+08006f64 l     O .bss	00000400 buf
 00000000 l    df *ABS*	00000000 kill.c
 00000000 l    df *ABS*	00000000 atoi.c
 00000000 l    df *ABS*	00000000 strcpy.c
 00000000 l    df *ABS*	00000000 strtol.c
-080053f4 l     F .text	0000024c _strtol_l.isra.0
+080065f4 l     F .text	0000024c _strtol_l.isra.0
 00000000 l    df *ABS*	00000000 ctype_.c
 00000000 l    df *ABS*	00000000 impure.c
-08005928 l     O .data	00000428 impure_data
-08005344 g     F .text	000000b0 strcpy
-0800503c g     F .text	0000022c kill_process
-080056a8 g     F .text	00000048 .hidden __udivsi3
-08005d54 g     O .data	00000004 earth
-08005644 g     F .text	0000001c strtol_l
-08005660 g     F .text	0000001c strtol
+08006b28 l     O .data	00000428 impure_data
+08006544 g     F .text	000000b0 strcpy
+0800623c g     F .text	0000022c kill_process
+080068a8 g     F .text	00000048 .hidden __udivsi3
+08006f54 g     O .data	00000004 earth
+08006844 g     F .text	0000001c strtol_l
+08006860 g     F .text	0000001c strtol
 00000800 g       *ABS*	00000000 __heap_size
-080056f0 g     F .text	00000010 .hidden __umodsi3
-08005338 g     F .text	0000000c _atoi_r
-08005d50 g     O .data	00000004 grass
-0800567c g     F .text	00000024 .hidden __mulsi3
-08005268 g     F .text	000000c4 main
-08005640 g     F .text	00000004 _strtol_r
-080056a0 g     F .text	00000084 .hidden __divsi3
-08005000 g       .text	00000000 _enter
+080068f0 g     F .text	00000010 .hidden __umodsi3
+08006538 g     F .text	0000000c _atoi_r
+08006f50 g     O .data	00000004 grass
+0800687c g     F .text	00000024 .hidden __mulsi3
+08006468 g     F .text	000000c4 main
+08006840 g     F .text	00000004 _strtol_r
+080068a0 g     F .text	00000084 .hidden __divsi3
+08006200 g       .text	00000000 _enter
 08008000 g       *ABS*	00000000 __heap_end
-08005d58 g     O .data	00000004 _impure_ptr
-08006168 g       .heap	00000000 __heap_start
-08005010 g     F .text	0000002c exit
-08005724 g     F .text	00000030 .hidden __modsi3
-0800532c g     F .text	0000000c atoi
-08005820 g     O .rodata	00000101 _ctype_
+08006f58 g     O .data	00000004 _impure_ptr
+08007368 g       .heap	00000000 __heap_start
+08006210 g     F .text	0000002c exit
+08006924 g     F .text	00000030 .hidden __modsi3
+0800652c g     F .text	0000000c atoi
+08006a20 g     O .rodata	00000101 _ctype_
 
 
 
 Disassembly of section .text:
 
-08005000 <_enter>:
+08006200 <_enter>:
 _enter():
- 8005000:	00052503          	lw	a0,0(a0)
- 8005004:	80002137          	lui	sp,0x80002
- 8005008:	260000ef          	jal	ra,8005268 <main>
- 800500c:	004000ef          	jal	ra,8005010 <exit>
+ 8006200:	00052503          	lw	a0,0(a0)
+ 8006204:	80002137          	lui	sp,0x80002
+ 8006208:	260000ef          	jal	ra,8006468 <main>
+ 800620c:	004000ef          	jal	ra,8006210 <exit>
 
-08005010 <exit>:
+08006210 <exit>:
 exit():
- 8005010:	fe010113          	addi	sp,sp,-32 # 80001fe0 <__heap_end+0x77ff9fe0>
- 8005014:	00112e23          	sw	ra,28(sp)
- 8005018:	00812c23          	sw	s0,24(sp)
- 800501c:	02010413          	addi	s0,sp,32
- 8005020:	fea42623          	sw	a0,-20(s0)
- 8005024:	080067b7          	lui	a5,0x8006
- 8005028:	d507a783          	lw	a5,-688(a5) # 8005d50 <grass>
- 800502c:	0a47a783          	lw	a5,164(a5)
- 8005030:	fec42503          	lw	a0,-20(s0)
- 8005034:	000780e7          	jalr	a5
- 8005038:	0000006f          	j	8005038 <exit+0x28>
+ 8006210:	fe010113          	addi	sp,sp,-32 # 80001fe0 <__heap_end+0x77ff9fe0>
+ 8006214:	00112e23          	sw	ra,28(sp)
+ 8006218:	00812c23          	sw	s0,24(sp)
+ 800621c:	02010413          	addi	s0,sp,32
+ 8006220:	fea42623          	sw	a0,-20(s0)
+ 8006224:	080077b7          	lui	a5,0x8007
+ 8006228:	f507a783          	lw	a5,-176(a5) # 8006f50 <grass>
+ 800622c:	0a47a783          	lw	a5,164(a5)
+ 8006230:	fec42503          	lw	a0,-20(s0)
+ 8006234:	000780e7          	jalr	a5
+ 8006238:	0000006f          	j	8006238 <exit+0x28>
 
-0800503c <kill_process>:
+0800623c <kill_process>:
 kill_process():
- 800503c:	da010113          	addi	sp,sp,-608
- 8005040:	24112e23          	sw	ra,604(sp)
- 8005044:	24812c23          	sw	s0,600(sp)
- 8005048:	26010413          	addi	s0,sp,608
- 800504c:	daa42623          	sw	a0,-596(s0)
- 8005050:	00400793          	li	a5,4
- 8005054:	dcf42823          	sw	a5,-560(s0)
- 8005058:	00100793          	li	a5,1
- 800505c:	dcf42a23          	sw	a5,-556(s0)
- 8005060:	fe042623          	sw	zero,-20(s0)
- 8005064:	dac42783          	lw	a5,-596(s0)
- 8005068:	fef42423          	sw	a5,-24(s0)
- 800506c:	fe842783          	lw	a5,-24(s0)
- 8005070:	02079263          	bnez	a5,8005094 <kill_process+0x58>
- 8005074:	fec42783          	lw	a5,-20(s0)
- 8005078:	00178713          	addi	a4,a5,1
- 800507c:	fee42623          	sw	a4,-20(s0)
- 8005080:	ff040713          	addi	a4,s0,-16
- 8005084:	00f707b3          	add	a5,a4,a5
- 8005088:	03000713          	li	a4,48
- 800508c:	dce78023          	sb	a4,-576(a5)
- 8005090:	10c0006f          	j	800519c <kill_process+0x160>
- 8005094:	fe842783          	lw	a5,-24(s0)
- 8005098:	0207d663          	bgez	a5,80050c4 <kill_process+0x88>
- 800509c:	fec42783          	lw	a5,-20(s0)
- 80050a0:	00178713          	addi	a4,a5,1
- 80050a4:	fee42623          	sw	a4,-20(s0)
- 80050a8:	ff040713          	addi	a4,s0,-16
- 80050ac:	00f707b3          	add	a5,a4,a5
- 80050b0:	02d00713          	li	a4,45
- 80050b4:	dce78023          	sb	a4,-576(a5)
- 80050b8:	fe842783          	lw	a5,-24(s0)
- 80050bc:	40f007b3          	neg	a5,a5
- 80050c0:	fef42423          	sw	a5,-24(s0)
- 80050c4:	fe042223          	sw	zero,-28(s0)
- 80050c8:	00100793          	li	a5,1
- 80050cc:	fef42023          	sw	a5,-32(s0)
- 80050d0:	0280006f          	j	80050f8 <kill_process+0xbc>
- 80050d4:	fe042703          	lw	a4,-32(s0)
- 80050d8:	00070793          	mv	a5,a4
- 80050dc:	00279793          	slli	a5,a5,0x2
- 80050e0:	00e787b3          	add	a5,a5,a4
- 80050e4:	00179793          	slli	a5,a5,0x1
- 80050e8:	fef42023          	sw	a5,-32(s0)
- 80050ec:	fe442783          	lw	a5,-28(s0)
- 80050f0:	00178793          	addi	a5,a5,1
- 80050f4:	fef42223          	sw	a5,-28(s0)
- 80050f8:	fe042583          	lw	a1,-32(s0)
- 80050fc:	fe842503          	lw	a0,-24(s0)
- 8005100:	5a0000ef          	jal	ra,80056a0 <__divsi3>
- 8005104:	00050793          	mv	a5,a0
- 8005108:	fcf046e3          	bgtz	a5,80050d4 <kill_process+0x98>
- 800510c:	fe042783          	lw	a5,-32(s0)
- 8005110:	00a00593          	li	a1,10
- 8005114:	00078513          	mv	a0,a5
- 8005118:	588000ef          	jal	ra,80056a0 <__divsi3>
- 800511c:	00050793          	mv	a5,a0
- 8005120:	fef42023          	sw	a5,-32(s0)
- 8005124:	0700006f          	j	8005194 <kill_process+0x158>
- 8005128:	fe042583          	lw	a1,-32(s0)
- 800512c:	fe842503          	lw	a0,-24(s0)
- 8005130:	570000ef          	jal	ra,80056a0 <__divsi3>
- 8005134:	00050793          	mv	a5,a0
- 8005138:	fcf42e23          	sw	a5,-36(s0)
- 800513c:	fdc42783          	lw	a5,-36(s0)
- 8005140:	0ff7f713          	andi	a4,a5,255
- 8005144:	fec42783          	lw	a5,-20(s0)
- 8005148:	00178693          	addi	a3,a5,1
- 800514c:	fed42623          	sw	a3,-20(s0)
- 8005150:	03070713          	addi	a4,a4,48
- 8005154:	0ff77713          	andi	a4,a4,255
- 8005158:	ff040693          	addi	a3,s0,-16
- 800515c:	00f687b3          	add	a5,a3,a5
- 8005160:	dce78023          	sb	a4,-576(a5)
- 8005164:	fe842783          	lw	a5,-24(s0)
- 8005168:	fe042583          	lw	a1,-32(s0)
- 800516c:	00078513          	mv	a0,a5
- 8005170:	5b4000ef          	jal	ra,8005724 <__modsi3>
- 8005174:	00050793          	mv	a5,a0
- 8005178:	fef42423          	sw	a5,-24(s0)
- 800517c:	fe042783          	lw	a5,-32(s0)
- 8005180:	00a00593          	li	a1,10
- 8005184:	00078513          	mv	a0,a5
- 8005188:	518000ef          	jal	ra,80056a0 <__divsi3>
- 800518c:	00050793          	mv	a5,a0
- 8005190:	fef42023          	sw	a5,-32(s0)
- 8005194:	fe042783          	lw	a5,-32(s0)
- 8005198:	f8f048e3          	bgtz	a5,8005128 <kill_process+0xec>
- 800519c:	fec42783          	lw	a5,-20(s0)
- 80051a0:	ff040713          	addi	a4,s0,-16
- 80051a4:	00f707b3          	add	a5,a4,a5
- 80051a8:	dc078023          	sb	zero,-576(a5)
- 80051ac:	db040713          	addi	a4,s0,-592
- 80051b0:	dd040793          	addi	a5,s0,-560
- 80051b4:	00878793          	addi	a5,a5,8
- 80051b8:	00070593          	mv	a1,a4
- 80051bc:	00078513          	mv	a0,a5
- 80051c0:	184000ef          	jal	ra,8005344 <strcpy>
- 80051c4:	080067b7          	lui	a5,0x8006
- 80051c8:	d507a783          	lw	a5,-688(a5) # 8005d50 <grass>
- 80051cc:	0a87a703          	lw	a4,168(a5)
- 80051d0:	dd040793          	addi	a5,s0,-560
- 80051d4:	20800613          	li	a2,520
- 80051d8:	00078593          	mv	a1,a5
- 80051dc:	00100513          	li	a0,1
- 80051e0:	000700e7          	jalr	a4
- 80051e4:	080067b7          	lui	a5,0x8006
- 80051e8:	d507a783          	lw	a5,-688(a5) # 8005d50 <grass>
- 80051ec:	0ac7a703          	lw	a4,172(a5)
- 80051f0:	40000613          	li	a2,1024
- 80051f4:	080067b7          	lui	a5,0x8006
- 80051f8:	d6478593          	addi	a1,a5,-668 # 8005d64 <buf>
- 80051fc:	080067b7          	lui	a5,0x8006
- 8005200:	d6078513          	addi	a0,a5,-672 # 8005d60 <sender>
- 8005204:	000700e7          	jalr	a4
- 8005208:	080067b7          	lui	a5,0x8006
- 800520c:	d607a703          	lw	a4,-672(a5) # 8005d60 <sender>
- 8005210:	00100793          	li	a5,1
- 8005214:	00f70e63          	beq	a4,a5,8005230 <kill_process+0x1f4>
- 8005218:	080067b7          	lui	a5,0x8006
- 800521c:	d547a783          	lw	a5,-684(a5) # 8005d54 <earth>
- 8005220:	03c7a703          	lw	a4,60(a5)
- 8005224:	080057b7          	lui	a5,0x8005
- 8005228:	79878513          	addi	a0,a5,1944 # 8005798 <__modsi3+0x74>
- 800522c:	000700e7          	jalr	a4
- 8005230:	080067b7          	lui	a5,0x8006
- 8005234:	d6478793          	addi	a5,a5,-668 # 8005d64 <buf>
- 8005238:	fcf42c23          	sw	a5,-40(s0)
- 800523c:	fd842783          	lw	a5,-40(s0)
- 8005240:	0007a783          	lw	a5,0(a5)
- 8005244:	00079663          	bnez	a5,8005250 <kill_process+0x214>
- 8005248:	00000793          	li	a5,0
- 800524c:	0080006f          	j	8005254 <kill_process+0x218>
- 8005250:	fff00793          	li	a5,-1
- 8005254:	00078513          	mv	a0,a5
- 8005258:	25c12083          	lw	ra,604(sp)
- 800525c:	25812403          	lw	s0,600(sp)
- 8005260:	26010113          	addi	sp,sp,608
- 8005264:	00008067          	ret
+ 800623c:	da010113          	addi	sp,sp,-608
+ 8006240:	24112e23          	sw	ra,604(sp)
+ 8006244:	24812c23          	sw	s0,600(sp)
+ 8006248:	26010413          	addi	s0,sp,608
+ 800624c:	daa42623          	sw	a0,-596(s0)
+ 8006250:	00400793          	li	a5,4
+ 8006254:	dcf42823          	sw	a5,-560(s0)
+ 8006258:	00100793          	li	a5,1
+ 800625c:	dcf42a23          	sw	a5,-556(s0)
+ 8006260:	fe042623          	sw	zero,-20(s0)
+ 8006264:	dac42783          	lw	a5,-596(s0)
+ 8006268:	fef42423          	sw	a5,-24(s0)
+ 800626c:	fe842783          	lw	a5,-24(s0)
+ 8006270:	02079263          	bnez	a5,8006294 <kill_process+0x58>
+ 8006274:	fec42783          	lw	a5,-20(s0)
+ 8006278:	00178713          	addi	a4,a5,1
+ 800627c:	fee42623          	sw	a4,-20(s0)
+ 8006280:	ff040713          	addi	a4,s0,-16
+ 8006284:	00f707b3          	add	a5,a4,a5
+ 8006288:	03000713          	li	a4,48
+ 800628c:	dce78023          	sb	a4,-576(a5)
+ 8006290:	10c0006f          	j	800639c <kill_process+0x160>
+ 8006294:	fe842783          	lw	a5,-24(s0)
+ 8006298:	0207d663          	bgez	a5,80062c4 <kill_process+0x88>
+ 800629c:	fec42783          	lw	a5,-20(s0)
+ 80062a0:	00178713          	addi	a4,a5,1
+ 80062a4:	fee42623          	sw	a4,-20(s0)
+ 80062a8:	ff040713          	addi	a4,s0,-16
+ 80062ac:	00f707b3          	add	a5,a4,a5
+ 80062b0:	02d00713          	li	a4,45
+ 80062b4:	dce78023          	sb	a4,-576(a5)
+ 80062b8:	fe842783          	lw	a5,-24(s0)
+ 80062bc:	40f007b3          	neg	a5,a5
+ 80062c0:	fef42423          	sw	a5,-24(s0)
+ 80062c4:	fe042223          	sw	zero,-28(s0)
+ 80062c8:	00100793          	li	a5,1
+ 80062cc:	fef42023          	sw	a5,-32(s0)
+ 80062d0:	0280006f          	j	80062f8 <kill_process+0xbc>
+ 80062d4:	fe042703          	lw	a4,-32(s0)
+ 80062d8:	00070793          	mv	a5,a4
+ 80062dc:	00279793          	slli	a5,a5,0x2
+ 80062e0:	00e787b3          	add	a5,a5,a4
+ 80062e4:	00179793          	slli	a5,a5,0x1
+ 80062e8:	fef42023          	sw	a5,-32(s0)
+ 80062ec:	fe442783          	lw	a5,-28(s0)
+ 80062f0:	00178793          	addi	a5,a5,1
+ 80062f4:	fef42223          	sw	a5,-28(s0)
+ 80062f8:	fe042583          	lw	a1,-32(s0)
+ 80062fc:	fe842503          	lw	a0,-24(s0)
+ 8006300:	5a0000ef          	jal	ra,80068a0 <__divsi3>
+ 8006304:	00050793          	mv	a5,a0
+ 8006308:	fcf046e3          	bgtz	a5,80062d4 <kill_process+0x98>
+ 800630c:	fe042783          	lw	a5,-32(s0)
+ 8006310:	00a00593          	li	a1,10
+ 8006314:	00078513          	mv	a0,a5
+ 8006318:	588000ef          	jal	ra,80068a0 <__divsi3>
+ 800631c:	00050793          	mv	a5,a0
+ 8006320:	fef42023          	sw	a5,-32(s0)
+ 8006324:	0700006f          	j	8006394 <kill_process+0x158>
+ 8006328:	fe042583          	lw	a1,-32(s0)
+ 800632c:	fe842503          	lw	a0,-24(s0)
+ 8006330:	570000ef          	jal	ra,80068a0 <__divsi3>
+ 8006334:	00050793          	mv	a5,a0
+ 8006338:	fcf42e23          	sw	a5,-36(s0)
+ 800633c:	fdc42783          	lw	a5,-36(s0)
+ 8006340:	0ff7f713          	andi	a4,a5,255
+ 8006344:	fec42783          	lw	a5,-20(s0)
+ 8006348:	00178693          	addi	a3,a5,1
+ 800634c:	fed42623          	sw	a3,-20(s0)
+ 8006350:	03070713          	addi	a4,a4,48
+ 8006354:	0ff77713          	andi	a4,a4,255
+ 8006358:	ff040693          	addi	a3,s0,-16
+ 800635c:	00f687b3          	add	a5,a3,a5
+ 8006360:	dce78023          	sb	a4,-576(a5)
+ 8006364:	fe842783          	lw	a5,-24(s0)
+ 8006368:	fe042583          	lw	a1,-32(s0)
+ 800636c:	00078513          	mv	a0,a5
+ 8006370:	5b4000ef          	jal	ra,8006924 <__modsi3>
+ 8006374:	00050793          	mv	a5,a0
+ 8006378:	fef42423          	sw	a5,-24(s0)
+ 800637c:	fe042783          	lw	a5,-32(s0)
+ 8006380:	00a00593          	li	a1,10
+ 8006384:	00078513          	mv	a0,a5
+ 8006388:	518000ef          	jal	ra,80068a0 <__divsi3>
+ 800638c:	00050793          	mv	a5,a0
+ 8006390:	fef42023          	sw	a5,-32(s0)
+ 8006394:	fe042783          	lw	a5,-32(s0)
+ 8006398:	f8f048e3          	bgtz	a5,8006328 <kill_process+0xec>
+ 800639c:	fec42783          	lw	a5,-20(s0)
+ 80063a0:	ff040713          	addi	a4,s0,-16
+ 80063a4:	00f707b3          	add	a5,a4,a5
+ 80063a8:	dc078023          	sb	zero,-576(a5)
+ 80063ac:	db040713          	addi	a4,s0,-592
+ 80063b0:	dd040793          	addi	a5,s0,-560
+ 80063b4:	00878793          	addi	a5,a5,8
+ 80063b8:	00070593          	mv	a1,a4
+ 80063bc:	00078513          	mv	a0,a5
+ 80063c0:	184000ef          	jal	ra,8006544 <strcpy>
+ 80063c4:	080077b7          	lui	a5,0x8007
+ 80063c8:	f507a783          	lw	a5,-176(a5) # 8006f50 <grass>
+ 80063cc:	0a87a703          	lw	a4,168(a5)
+ 80063d0:	dd040793          	addi	a5,s0,-560
+ 80063d4:	20800613          	li	a2,520
+ 80063d8:	00078593          	mv	a1,a5
+ 80063dc:	00100513          	li	a0,1
+ 80063e0:	000700e7          	jalr	a4
+ 80063e4:	080077b7          	lui	a5,0x8007
+ 80063e8:	f507a783          	lw	a5,-176(a5) # 8006f50 <grass>
+ 80063ec:	0ac7a703          	lw	a4,172(a5)
+ 80063f0:	40000613          	li	a2,1024
+ 80063f4:	080077b7          	lui	a5,0x8007
+ 80063f8:	f6478593          	addi	a1,a5,-156 # 8006f64 <buf>
+ 80063fc:	080077b7          	lui	a5,0x8007
+ 8006400:	f6078513          	addi	a0,a5,-160 # 8006f60 <sender>
+ 8006404:	000700e7          	jalr	a4
+ 8006408:	080077b7          	lui	a5,0x8007
+ 800640c:	f607a703          	lw	a4,-160(a5) # 8006f60 <sender>
+ 8006410:	00100793          	li	a5,1
+ 8006414:	00f70e63          	beq	a4,a5,8006430 <kill_process+0x1f4>
+ 8006418:	080077b7          	lui	a5,0x8007
+ 800641c:	f547a783          	lw	a5,-172(a5) # 8006f54 <earth>
+ 8006420:	03c7a703          	lw	a4,60(a5)
+ 8006424:	080077b7          	lui	a5,0x8007
+ 8006428:	99878513          	addi	a0,a5,-1640 # 8006998 <__modsi3+0x74>
+ 800642c:	000700e7          	jalr	a4
+ 8006430:	080077b7          	lui	a5,0x8007
+ 8006434:	f6478793          	addi	a5,a5,-156 # 8006f64 <buf>
+ 8006438:	fcf42c23          	sw	a5,-40(s0)
+ 800643c:	fd842783          	lw	a5,-40(s0)
+ 8006440:	0007a783          	lw	a5,0(a5)
+ 8006444:	00079663          	bnez	a5,8006450 <kill_process+0x214>
+ 8006448:	00000793          	li	a5,0
+ 800644c:	0080006f          	j	8006454 <kill_process+0x218>
+ 8006450:	fff00793          	li	a5,-1
+ 8006454:	00078513          	mv	a0,a5
+ 8006458:	25c12083          	lw	ra,604(sp)
+ 800645c:	25812403          	lw	s0,600(sp)
+ 8006460:	26010113          	addi	sp,sp,608
+ 8006464:	00008067          	ret
 
-08005268 <main>:
+08006468 <main>:
 main():
- 8005268:	fd010113          	addi	sp,sp,-48
- 800526c:	02112623          	sw	ra,44(sp)
- 8005270:	02812423          	sw	s0,40(sp)
- 8005274:	03010413          	addi	s0,sp,48
- 8005278:	fca42e23          	sw	a0,-36(s0)
- 800527c:	fcb42c23          	sw	a1,-40(s0)
- 8005280:	fdc42703          	lw	a4,-36(s0)
- 8005284:	00200793          	li	a5,2
- 8005288:	02f70263          	beq	a4,a5,80052ac <main+0x44>
- 800528c:	080067b7          	lui	a5,0x8006
- 8005290:	d547a783          	lw	a5,-684(a5) # 8005d54 <earth>
- 8005294:	0347a703          	lw	a4,52(a5)
- 8005298:	080057b7          	lui	a5,0x8005
- 800529c:	7b878513          	addi	a0,a5,1976 # 80057b8 <__modsi3+0x94>
- 80052a0:	000700e7          	jalr	a4
- 80052a4:	fff00793          	li	a5,-1
- 80052a8:	0700006f          	j	8005318 <main+0xb0>
- 80052ac:	fd842783          	lw	a5,-40(s0)
- 80052b0:	00478793          	addi	a5,a5,4
- 80052b4:	0007a783          	lw	a5,0(a5)
- 80052b8:	00078513          	mv	a0,a5
- 80052bc:	070000ef          	jal	ra,800532c <atoi>
- 80052c0:	fea42623          	sw	a0,-20(s0)
- 80052c4:	fec42503          	lw	a0,-20(s0)
- 80052c8:	d75ff0ef          	jal	ra,800503c <kill_process>
- 80052cc:	fea42423          	sw	a0,-24(s0)
- 80052d0:	fe842783          	lw	a5,-24(s0)
- 80052d4:	02079263          	bnez	a5,80052f8 <main+0x90>
- 80052d8:	080067b7          	lui	a5,0x8006
- 80052dc:	d547a783          	lw	a5,-684(a5) # 8005d54 <earth>
- 80052e0:	0347a703          	lw	a4,52(a5)
- 80052e4:	fec42583          	lw	a1,-20(s0)
- 80052e8:	080057b7          	lui	a5,0x8005
- 80052ec:	7cc78513          	addi	a0,a5,1996 # 80057cc <__modsi3+0xa8>
- 80052f0:	000700e7          	jalr	a4
- 80052f4:	0200006f          	j	8005314 <main+0xac>
- 80052f8:	080067b7          	lui	a5,0x8006
- 80052fc:	d547a783          	lw	a5,-684(a5) # 8005d54 <earth>
- 8005300:	0347a703          	lw	a4,52(a5)
- 8005304:	fec42583          	lw	a1,-20(s0)
- 8005308:	080057b7          	lui	a5,0x8005
- 800530c:	7f878513          	addi	a0,a5,2040 # 80057f8 <__modsi3+0xd4>
- 8005310:	000700e7          	jalr	a4
- 8005314:	fe842783          	lw	a5,-24(s0)
- 8005318:	00078513          	mv	a0,a5
- 800531c:	02c12083          	lw	ra,44(sp)
- 8005320:	02812403          	lw	s0,40(sp)
- 8005324:	03010113          	addi	sp,sp,48
- 8005328:	00008067          	ret
+ 8006468:	fd010113          	addi	sp,sp,-48
+ 800646c:	02112623          	sw	ra,44(sp)
+ 8006470:	02812423          	sw	s0,40(sp)
+ 8006474:	03010413          	addi	s0,sp,48
+ 8006478:	fca42e23          	sw	a0,-36(s0)
+ 800647c:	fcb42c23          	sw	a1,-40(s0)
+ 8006480:	fdc42703          	lw	a4,-36(s0)
+ 8006484:	00200793          	li	a5,2
+ 8006488:	02f70263          	beq	a4,a5,80064ac <main+0x44>
+ 800648c:	080077b7          	lui	a5,0x8007
+ 8006490:	f547a783          	lw	a5,-172(a5) # 8006f54 <earth>
+ 8006494:	0347a703          	lw	a4,52(a5)
+ 8006498:	080077b7          	lui	a5,0x8007
+ 800649c:	9b878513          	addi	a0,a5,-1608 # 80069b8 <__modsi3+0x94>
+ 80064a0:	000700e7          	jalr	a4
+ 80064a4:	fff00793          	li	a5,-1
+ 80064a8:	0700006f          	j	8006518 <main+0xb0>
+ 80064ac:	fd842783          	lw	a5,-40(s0)
+ 80064b0:	00478793          	addi	a5,a5,4
+ 80064b4:	0007a783          	lw	a5,0(a5)
+ 80064b8:	00078513          	mv	a0,a5
+ 80064bc:	070000ef          	jal	ra,800652c <atoi>
+ 80064c0:	fea42623          	sw	a0,-20(s0)
+ 80064c4:	fec42503          	lw	a0,-20(s0)
+ 80064c8:	d75ff0ef          	jal	ra,800623c <kill_process>
+ 80064cc:	fea42423          	sw	a0,-24(s0)
+ 80064d0:	fe842783          	lw	a5,-24(s0)
+ 80064d4:	02079263          	bnez	a5,80064f8 <main+0x90>
+ 80064d8:	080077b7          	lui	a5,0x8007
+ 80064dc:	f547a783          	lw	a5,-172(a5) # 8006f54 <earth>
+ 80064e0:	0347a703          	lw	a4,52(a5)
+ 80064e4:	fec42583          	lw	a1,-20(s0)
+ 80064e8:	080077b7          	lui	a5,0x8007
+ 80064ec:	9cc78513          	addi	a0,a5,-1588 # 80069cc <__modsi3+0xa8>
+ 80064f0:	000700e7          	jalr	a4
+ 80064f4:	0200006f          	j	8006514 <main+0xac>
+ 80064f8:	080077b7          	lui	a5,0x8007
+ 80064fc:	f547a783          	lw	a5,-172(a5) # 8006f54 <earth>
+ 8006500:	0347a703          	lw	a4,52(a5)
+ 8006504:	fec42583          	lw	a1,-20(s0)
+ 8006508:	080077b7          	lui	a5,0x8007
+ 800650c:	9f878513          	addi	a0,a5,-1544 # 80069f8 <__modsi3+0xd4>
+ 8006510:	000700e7          	jalr	a4
+ 8006514:	fe842783          	lw	a5,-24(s0)
+ 8006518:	00078513          	mv	a0,a5
+ 800651c:	02c12083          	lw	ra,44(sp)
+ 8006520:	02812403          	lw	s0,40(sp)
+ 8006524:	03010113          	addi	sp,sp,48
+ 8006528:	00008067          	ret
 
-0800532c <atoi>:
+0800652c <atoi>:
 atoi():
- 800532c:	00a00613          	li	a2,10
- 8005330:	00000593          	li	a1,0
- 8005334:	32c0006f          	j	8005660 <strtol>
+ 800652c:	00a00613          	li	a2,10
+ 8006530:	00000593          	li	a1,0
+ 8006534:	32c0006f          	j	8006860 <strtol>
 
-08005338 <_atoi_r>:
+08006538 <_atoi_r>:
 _atoi_r():
- 8005338:	00a00693          	li	a3,10
- 800533c:	00000613          	li	a2,0
- 8005340:	3000006f          	j	8005640 <_strtol_r>
+ 8006538:	00a00693          	li	a3,10
+ 800653c:	00000613          	li	a2,0
+ 8006540:	3000006f          	j	8006840 <_strtol_r>
 
-08005344 <strcpy>:
+08006544 <strcpy>:
 strcpy():
- 8005344:	00b567b3          	or	a5,a0,a1
- 8005348:	0037f793          	andi	a5,a5,3
- 800534c:	08079263          	bnez	a5,80053d0 <strcpy+0x8c>
- 8005350:	0005a703          	lw	a4,0(a1)
- 8005354:	7f7f86b7          	lui	a3,0x7f7f8
- 8005358:	f7f68693          	addi	a3,a3,-129 # 7f7f7f7f <__heap_end+0x777eff7f>
- 800535c:	00d777b3          	and	a5,a4,a3
- 8005360:	00d787b3          	add	a5,a5,a3
- 8005364:	00e7e7b3          	or	a5,a5,a4
- 8005368:	00d7e7b3          	or	a5,a5,a3
- 800536c:	fff00613          	li	a2,-1
- 8005370:	06c79e63          	bne	a5,a2,80053ec <strcpy+0xa8>
- 8005374:	00050613          	mv	a2,a0
- 8005378:	fff00813          	li	a6,-1
- 800537c:	00460613          	addi	a2,a2,4
- 8005380:	00458593          	addi	a1,a1,4
- 8005384:	fee62e23          	sw	a4,-4(a2)
- 8005388:	0005a703          	lw	a4,0(a1)
- 800538c:	00d777b3          	and	a5,a4,a3
- 8005390:	00d787b3          	add	a5,a5,a3
- 8005394:	00e7e7b3          	or	a5,a5,a4
- 8005398:	00d7e7b3          	or	a5,a5,a3
- 800539c:	ff0780e3          	beq	a5,a6,800537c <strcpy+0x38>
- 80053a0:	0005c783          	lbu	a5,0(a1)
- 80053a4:	0015c703          	lbu	a4,1(a1)
- 80053a8:	0025c683          	lbu	a3,2(a1)
- 80053ac:	00f60023          	sb	a5,0(a2)
- 80053b0:	00078a63          	beqz	a5,80053c4 <strcpy+0x80>
- 80053b4:	00e600a3          	sb	a4,1(a2)
- 80053b8:	00070663          	beqz	a4,80053c4 <strcpy+0x80>
- 80053bc:	00d60123          	sb	a3,2(a2)
- 80053c0:	00069463          	bnez	a3,80053c8 <strcpy+0x84>
- 80053c4:	00008067          	ret
- 80053c8:	000601a3          	sb	zero,3(a2)
- 80053cc:	00008067          	ret
- 80053d0:	00050793          	mv	a5,a0
- 80053d4:	0005c703          	lbu	a4,0(a1)
- 80053d8:	00178793          	addi	a5,a5,1
- 80053dc:	00158593          	addi	a1,a1,1
- 80053e0:	fee78fa3          	sb	a4,-1(a5)
- 80053e4:	fe0718e3          	bnez	a4,80053d4 <strcpy+0x90>
- 80053e8:	00008067          	ret
- 80053ec:	00050613          	mv	a2,a0
- 80053f0:	fb1ff06f          	j	80053a0 <strcpy+0x5c>
+ 8006544:	00b567b3          	or	a5,a0,a1
+ 8006548:	0037f793          	andi	a5,a5,3
+ 800654c:	08079263          	bnez	a5,80065d0 <strcpy+0x8c>
+ 8006550:	0005a703          	lw	a4,0(a1)
+ 8006554:	7f7f86b7          	lui	a3,0x7f7f8
+ 8006558:	f7f68693          	addi	a3,a3,-129 # 7f7f7f7f <__heap_end+0x777eff7f>
+ 800655c:	00d777b3          	and	a5,a4,a3
+ 8006560:	00d787b3          	add	a5,a5,a3
+ 8006564:	00e7e7b3          	or	a5,a5,a4
+ 8006568:	00d7e7b3          	or	a5,a5,a3
+ 800656c:	fff00613          	li	a2,-1
+ 8006570:	06c79e63          	bne	a5,a2,80065ec <strcpy+0xa8>
+ 8006574:	00050613          	mv	a2,a0
+ 8006578:	fff00813          	li	a6,-1
+ 800657c:	00460613          	addi	a2,a2,4
+ 8006580:	00458593          	addi	a1,a1,4
+ 8006584:	fee62e23          	sw	a4,-4(a2)
+ 8006588:	0005a703          	lw	a4,0(a1)
+ 800658c:	00d777b3          	and	a5,a4,a3
+ 8006590:	00d787b3          	add	a5,a5,a3
+ 8006594:	00e7e7b3          	or	a5,a5,a4
+ 8006598:	00d7e7b3          	or	a5,a5,a3
+ 800659c:	ff0780e3          	beq	a5,a6,800657c <strcpy+0x38>
+ 80065a0:	0005c783          	lbu	a5,0(a1)
+ 80065a4:	0015c703          	lbu	a4,1(a1)
+ 80065a8:	0025c683          	lbu	a3,2(a1)
+ 80065ac:	00f60023          	sb	a5,0(a2)
+ 80065b0:	00078a63          	beqz	a5,80065c4 <strcpy+0x80>
+ 80065b4:	00e600a3          	sb	a4,1(a2)
+ 80065b8:	00070663          	beqz	a4,80065c4 <strcpy+0x80>
+ 80065bc:	00d60123          	sb	a3,2(a2)
+ 80065c0:	00069463          	bnez	a3,80065c8 <strcpy+0x84>
+ 80065c4:	00008067          	ret
+ 80065c8:	000601a3          	sb	zero,3(a2)
+ 80065cc:	00008067          	ret
+ 80065d0:	00050793          	mv	a5,a0
+ 80065d4:	0005c703          	lbu	a4,0(a1)
+ 80065d8:	00178793          	addi	a5,a5,1
+ 80065dc:	00158593          	addi	a1,a1,1
+ 80065e0:	fee78fa3          	sb	a4,-1(a5)
+ 80065e4:	fe0718e3          	bnez	a4,80065d4 <strcpy+0x90>
+ 80065e8:	00008067          	ret
+ 80065ec:	00050613          	mv	a2,a0
+ 80065f0:	fb1ff06f          	j	80065a0 <strcpy+0x5c>
 
-080053f4 <_strtol_l.isra.0>:
+080065f4 <_strtol_l.isra.0>:
 _strtol_l.isra.0():
- 80053f4:	fb010113          	addi	sp,sp,-80
- 80053f8:	03412c23          	sw	s4,56(sp)
- 80053fc:	03512a23          	sw	s5,52(sp)
- 8005400:	03912223          	sw	s9,36(sp)
- 8005404:	04112623          	sw	ra,76(sp)
- 8005408:	00068c93          	mv	s9,a3
- 800540c:	04812423          	sw	s0,72(sp)
- 8005410:	04912223          	sw	s1,68(sp)
- 8005414:	05212023          	sw	s2,64(sp)
- 8005418:	03312e23          	sw	s3,60(sp)
- 800541c:	03612823          	sw	s6,48(sp)
- 8005420:	03712623          	sw	s7,44(sp)
- 8005424:	03812423          	sw	s8,40(sp)
- 8005428:	03a12023          	sw	s10,32(sp)
- 800542c:	01b12e23          	sw	s11,28(sp)
- 8005430:	00058a13          	mv	s4,a1
- 8005434:	00a12623          	sw	a0,12(sp)
- 8005438:	00060a93          	mv	s5,a2
- 800543c:	00058793          	mv	a5,a1
- 8005440:	00000697          	auipc	a3,0x0
- 8005444:	3e168693          	addi	a3,a3,993 # 8005821 <_ctype_+0x1>
- 8005448:	0080006f          	j	8005450 <_strtol_l.isra.0+0x5c>
- 800544c:	00048793          	mv	a5,s1
- 8005450:	00178493          	addi	s1,a5,1
- 8005454:	fff4c403          	lbu	s0,-1(s1)
- 8005458:	00868733          	add	a4,a3,s0
- 800545c:	00074703          	lbu	a4,0(a4)
- 8005460:	00877713          	andi	a4,a4,8
- 8005464:	fe0714e3          	bnez	a4,800544c <_strtol_l.isra.0+0x58>
- 8005468:	02d00713          	li	a4,45
- 800546c:	16e40863          	beq	s0,a4,80055dc <_strtol_l.isra.0+0x1e8>
- 8005470:	02b00713          	li	a4,43
- 8005474:	00000b93          	li	s7,0
- 8005478:	10e40e63          	beq	s0,a4,8005594 <_strtol_l.isra.0+0x1a0>
- 800547c:	120c8463          	beqz	s9,80055a4 <_strtol_l.isra.0+0x1b0>
- 8005480:	01000793          	li	a5,16
- 8005484:	000c8913          	mv	s2,s9
- 8005488:	16fc8263          	beq	s9,a5,80055ec <_strtol_l.isra.0+0x1f8>
- 800548c:	800009b7          	lui	s3,0x80000
- 8005490:	000b9463          	bnez	s7,8005498 <_strtol_l.isra.0+0xa4>
- 8005494:	fff9c993          	not	s3,s3
- 8005498:	00090593          	mv	a1,s2
- 800549c:	00098513          	mv	a0,s3
- 80054a0:	250000ef          	jal	ra,80056f0 <__umodsi3>
- 80054a4:	00a12423          	sw	a0,8(sp)
- 80054a8:	00090593          	mv	a1,s2
- 80054ac:	00098513          	mv	a0,s3
- 80054b0:	1f8000ef          	jal	ra,80056a8 <__udivsi3>
- 80054b4:	00900d13          	li	s10,9
- 80054b8:	fd040793          	addi	a5,s0,-48
- 80054bc:	00050c13          	mv	s8,a0
- 80054c0:	00000713          	li	a4,0
- 80054c4:	00000593          	li	a1,0
- 80054c8:	01900b13          	li	s6,25
- 80054cc:	fff00d93          	li	s11,-1
- 80054d0:	02fd6e63          	bltu	s10,a5,800550c <_strtol_l.isra.0+0x118>
- 80054d4:	00078413          	mv	s0,a5
- 80054d8:	05945263          	bge	s0,s9,800551c <_strtol_l.isra.0+0x128>
- 80054dc:	03b70063          	beq	a4,s11,80054fc <_strtol_l.isra.0+0x108>
- 80054e0:	fff00713          	li	a4,-1
- 80054e4:	00bc6c63          	bltu	s8,a1,80054fc <_strtol_l.isra.0+0x108>
- 80054e8:	0abc0063          	beq	s8,a1,8005588 <_strtol_l.isra.0+0x194>
- 80054ec:	00090513          	mv	a0,s2
- 80054f0:	18c000ef          	jal	ra,800567c <__mulsi3>
- 80054f4:	00a405b3          	add	a1,s0,a0
- 80054f8:	00100713          	li	a4,1
- 80054fc:	00148493          	addi	s1,s1,1
- 8005500:	fff4c403          	lbu	s0,-1(s1)
- 8005504:	fd040793          	addi	a5,s0,-48
- 8005508:	fcfd76e3          	bgeu	s10,a5,80054d4 <_strtol_l.isra.0+0xe0>
- 800550c:	fbf40793          	addi	a5,s0,-65
- 8005510:	06fb6463          	bltu	s6,a5,8005578 <_strtol_l.isra.0+0x184>
- 8005514:	fc940413          	addi	s0,s0,-55
- 8005518:	fd9442e3          	blt	s0,s9,80054dc <_strtol_l.isra.0+0xe8>
- 800551c:	fff00793          	li	a5,-1
- 8005520:	08f70c63          	beq	a4,a5,80055b8 <_strtol_l.isra.0+0x1c4>
- 8005524:	000b8463          	beqz	s7,800552c <_strtol_l.isra.0+0x138>
- 8005528:	40b005b3          	neg	a1,a1
- 800552c:	000a8663          	beqz	s5,8005538 <_strtol_l.isra.0+0x144>
- 8005530:	0c071e63          	bnez	a4,800560c <_strtol_l.isra.0+0x218>
- 8005534:	014aa023          	sw	s4,0(s5)
- 8005538:	04c12083          	lw	ra,76(sp)
- 800553c:	04812403          	lw	s0,72(sp)
- 8005540:	04412483          	lw	s1,68(sp)
- 8005544:	04012903          	lw	s2,64(sp)
- 8005548:	03c12983          	lw	s3,60(sp)
- 800554c:	03812a03          	lw	s4,56(sp)
- 8005550:	03412a83          	lw	s5,52(sp)
- 8005554:	03012b03          	lw	s6,48(sp)
- 8005558:	02c12b83          	lw	s7,44(sp)
- 800555c:	02812c03          	lw	s8,40(sp)
- 8005560:	02412c83          	lw	s9,36(sp)
- 8005564:	02012d03          	lw	s10,32(sp)
- 8005568:	01c12d83          	lw	s11,28(sp)
- 800556c:	00058513          	mv	a0,a1
- 8005570:	05010113          	addi	sp,sp,80
- 8005574:	00008067          	ret
- 8005578:	f9f40793          	addi	a5,s0,-97
- 800557c:	fafb60e3          	bltu	s6,a5,800551c <_strtol_l.isra.0+0x128>
- 8005580:	fa940413          	addi	s0,s0,-87
- 8005584:	f55ff06f          	j	80054d8 <_strtol_l.isra.0+0xe4>
- 8005588:	00812783          	lw	a5,8(sp)
- 800558c:	f687c8e3          	blt	a5,s0,80054fc <_strtol_l.isra.0+0x108>
- 8005590:	f5dff06f          	j	80054ec <_strtol_l.isra.0+0xf8>
- 8005594:	0004c403          	lbu	s0,0(s1)
- 8005598:	00000b93          	li	s7,0
- 800559c:	00278493          	addi	s1,a5,2
- 80055a0:	ee0c90e3          	bnez	s9,8005480 <_strtol_l.isra.0+0x8c>
- 80055a4:	03000793          	li	a5,48
- 80055a8:	06f40663          	beq	s0,a5,8005614 <_strtol_l.isra.0+0x220>
- 80055ac:	00a00913          	li	s2,10
- 80055b0:	00a00c93          	li	s9,10
- 80055b4:	ed9ff06f          	j	800548c <_strtol_l.isra.0+0x98>
- 80055b8:	00c12703          	lw	a4,12(sp)
- 80055bc:	02200793          	li	a5,34
- 80055c0:	00098593          	mv	a1,s3
- 80055c4:	00f72023          	sw	a5,0(a4)
- 80055c8:	f60a88e3          	beqz	s5,8005538 <_strtol_l.isra.0+0x144>
- 80055cc:	fff48a13          	addi	s4,s1,-1
- 80055d0:	00098593          	mv	a1,s3
- 80055d4:	014aa023          	sw	s4,0(s5)
- 80055d8:	f61ff06f          	j	8005538 <_strtol_l.isra.0+0x144>
- 80055dc:	0004c403          	lbu	s0,0(s1)
- 80055e0:	00100b93          	li	s7,1
- 80055e4:	00278493          	addi	s1,a5,2
- 80055e8:	e95ff06f          	j	800547c <_strtol_l.isra.0+0x88>
- 80055ec:	03000793          	li	a5,48
- 80055f0:	00f41a63          	bne	s0,a5,8005604 <_strtol_l.isra.0+0x210>
- 80055f4:	0004c783          	lbu	a5,0(s1)
- 80055f8:	05800713          	li	a4,88
- 80055fc:	0df7f793          	andi	a5,a5,223
- 8005600:	02e78663          	beq	a5,a4,800562c <_strtol_l.isra.0+0x238>
- 8005604:	01000913          	li	s2,16
- 8005608:	e85ff06f          	j	800548c <_strtol_l.isra.0+0x98>
- 800560c:	00058993          	mv	s3,a1
- 8005610:	fbdff06f          	j	80055cc <_strtol_l.isra.0+0x1d8>
- 8005614:	0004c783          	lbu	a5,0(s1)
- 8005618:	05800713          	li	a4,88
- 800561c:	00800913          	li	s2,8
- 8005620:	0df7f793          	andi	a5,a5,223
- 8005624:	00800c93          	li	s9,8
- 8005628:	e6e792e3          	bne	a5,a4,800548c <_strtol_l.isra.0+0x98>
- 800562c:	0014c403          	lbu	s0,1(s1)
- 8005630:	01000913          	li	s2,16
- 8005634:	00248493          	addi	s1,s1,2
- 8005638:	01000c93          	li	s9,16
- 800563c:	e51ff06f          	j	800548c <_strtol_l.isra.0+0x98>
+ 80065f4:	fb010113          	addi	sp,sp,-80
+ 80065f8:	03412c23          	sw	s4,56(sp)
+ 80065fc:	03512a23          	sw	s5,52(sp)
+ 8006600:	03912223          	sw	s9,36(sp)
+ 8006604:	04112623          	sw	ra,76(sp)
+ 8006608:	00068c93          	mv	s9,a3
+ 800660c:	04812423          	sw	s0,72(sp)
+ 8006610:	04912223          	sw	s1,68(sp)
+ 8006614:	05212023          	sw	s2,64(sp)
+ 8006618:	03312e23          	sw	s3,60(sp)
+ 800661c:	03612823          	sw	s6,48(sp)
+ 8006620:	03712623          	sw	s7,44(sp)
+ 8006624:	03812423          	sw	s8,40(sp)
+ 8006628:	03a12023          	sw	s10,32(sp)
+ 800662c:	01b12e23          	sw	s11,28(sp)
+ 8006630:	00058a13          	mv	s4,a1
+ 8006634:	00a12623          	sw	a0,12(sp)
+ 8006638:	00060a93          	mv	s5,a2
+ 800663c:	00058793          	mv	a5,a1
+ 8006640:	00000697          	auipc	a3,0x0
+ 8006644:	3e168693          	addi	a3,a3,993 # 8006a21 <_ctype_+0x1>
+ 8006648:	0080006f          	j	8006650 <_strtol_l.isra.0+0x5c>
+ 800664c:	00048793          	mv	a5,s1
+ 8006650:	00178493          	addi	s1,a5,1
+ 8006654:	fff4c403          	lbu	s0,-1(s1)
+ 8006658:	00868733          	add	a4,a3,s0
+ 800665c:	00074703          	lbu	a4,0(a4)
+ 8006660:	00877713          	andi	a4,a4,8
+ 8006664:	fe0714e3          	bnez	a4,800664c <_strtol_l.isra.0+0x58>
+ 8006668:	02d00713          	li	a4,45
+ 800666c:	16e40863          	beq	s0,a4,80067dc <_strtol_l.isra.0+0x1e8>
+ 8006670:	02b00713          	li	a4,43
+ 8006674:	00000b93          	li	s7,0
+ 8006678:	10e40e63          	beq	s0,a4,8006794 <_strtol_l.isra.0+0x1a0>
+ 800667c:	120c8463          	beqz	s9,80067a4 <_strtol_l.isra.0+0x1b0>
+ 8006680:	01000793          	li	a5,16
+ 8006684:	000c8913          	mv	s2,s9
+ 8006688:	16fc8263          	beq	s9,a5,80067ec <_strtol_l.isra.0+0x1f8>
+ 800668c:	800009b7          	lui	s3,0x80000
+ 8006690:	000b9463          	bnez	s7,8006698 <_strtol_l.isra.0+0xa4>
+ 8006694:	fff9c993          	not	s3,s3
+ 8006698:	00090593          	mv	a1,s2
+ 800669c:	00098513          	mv	a0,s3
+ 80066a0:	250000ef          	jal	ra,80068f0 <__umodsi3>
+ 80066a4:	00a12423          	sw	a0,8(sp)
+ 80066a8:	00090593          	mv	a1,s2
+ 80066ac:	00098513          	mv	a0,s3
+ 80066b0:	1f8000ef          	jal	ra,80068a8 <__udivsi3>
+ 80066b4:	00900d13          	li	s10,9
+ 80066b8:	fd040793          	addi	a5,s0,-48
+ 80066bc:	00050c13          	mv	s8,a0
+ 80066c0:	00000713          	li	a4,0
+ 80066c4:	00000593          	li	a1,0
+ 80066c8:	01900b13          	li	s6,25
+ 80066cc:	fff00d93          	li	s11,-1
+ 80066d0:	02fd6e63          	bltu	s10,a5,800670c <_strtol_l.isra.0+0x118>
+ 80066d4:	00078413          	mv	s0,a5
+ 80066d8:	05945263          	bge	s0,s9,800671c <_strtol_l.isra.0+0x128>
+ 80066dc:	03b70063          	beq	a4,s11,80066fc <_strtol_l.isra.0+0x108>
+ 80066e0:	fff00713          	li	a4,-1
+ 80066e4:	00bc6c63          	bltu	s8,a1,80066fc <_strtol_l.isra.0+0x108>
+ 80066e8:	0abc0063          	beq	s8,a1,8006788 <_strtol_l.isra.0+0x194>
+ 80066ec:	00090513          	mv	a0,s2
+ 80066f0:	18c000ef          	jal	ra,800687c <__mulsi3>
+ 80066f4:	00a405b3          	add	a1,s0,a0
+ 80066f8:	00100713          	li	a4,1
+ 80066fc:	00148493          	addi	s1,s1,1
+ 8006700:	fff4c403          	lbu	s0,-1(s1)
+ 8006704:	fd040793          	addi	a5,s0,-48
+ 8006708:	fcfd76e3          	bgeu	s10,a5,80066d4 <_strtol_l.isra.0+0xe0>
+ 800670c:	fbf40793          	addi	a5,s0,-65
+ 8006710:	06fb6463          	bltu	s6,a5,8006778 <_strtol_l.isra.0+0x184>
+ 8006714:	fc940413          	addi	s0,s0,-55
+ 8006718:	fd9442e3          	blt	s0,s9,80066dc <_strtol_l.isra.0+0xe8>
+ 800671c:	fff00793          	li	a5,-1
+ 8006720:	08f70c63          	beq	a4,a5,80067b8 <_strtol_l.isra.0+0x1c4>
+ 8006724:	000b8463          	beqz	s7,800672c <_strtol_l.isra.0+0x138>
+ 8006728:	40b005b3          	neg	a1,a1
+ 800672c:	000a8663          	beqz	s5,8006738 <_strtol_l.isra.0+0x144>
+ 8006730:	0c071e63          	bnez	a4,800680c <_strtol_l.isra.0+0x218>
+ 8006734:	014aa023          	sw	s4,0(s5)
+ 8006738:	04c12083          	lw	ra,76(sp)
+ 800673c:	04812403          	lw	s0,72(sp)
+ 8006740:	04412483          	lw	s1,68(sp)
+ 8006744:	04012903          	lw	s2,64(sp)
+ 8006748:	03c12983          	lw	s3,60(sp)
+ 800674c:	03812a03          	lw	s4,56(sp)
+ 8006750:	03412a83          	lw	s5,52(sp)
+ 8006754:	03012b03          	lw	s6,48(sp)
+ 8006758:	02c12b83          	lw	s7,44(sp)
+ 800675c:	02812c03          	lw	s8,40(sp)
+ 8006760:	02412c83          	lw	s9,36(sp)
+ 8006764:	02012d03          	lw	s10,32(sp)
+ 8006768:	01c12d83          	lw	s11,28(sp)
+ 800676c:	00058513          	mv	a0,a1
+ 8006770:	05010113          	addi	sp,sp,80
+ 8006774:	00008067          	ret
+ 8006778:	f9f40793          	addi	a5,s0,-97
+ 800677c:	fafb60e3          	bltu	s6,a5,800671c <_strtol_l.isra.0+0x128>
+ 8006780:	fa940413          	addi	s0,s0,-87
+ 8006784:	f55ff06f          	j	80066d8 <_strtol_l.isra.0+0xe4>
+ 8006788:	00812783          	lw	a5,8(sp)
+ 800678c:	f687c8e3          	blt	a5,s0,80066fc <_strtol_l.isra.0+0x108>
+ 8006790:	f5dff06f          	j	80066ec <_strtol_l.isra.0+0xf8>
+ 8006794:	0004c403          	lbu	s0,0(s1)
+ 8006798:	00000b93          	li	s7,0
+ 800679c:	00278493          	addi	s1,a5,2
+ 80067a0:	ee0c90e3          	bnez	s9,8006680 <_strtol_l.isra.0+0x8c>
+ 80067a4:	03000793          	li	a5,48
+ 80067a8:	06f40663          	beq	s0,a5,8006814 <_strtol_l.isra.0+0x220>
+ 80067ac:	00a00913          	li	s2,10
+ 80067b0:	00a00c93          	li	s9,10
+ 80067b4:	ed9ff06f          	j	800668c <_strtol_l.isra.0+0x98>
+ 80067b8:	00c12703          	lw	a4,12(sp)
+ 80067bc:	02200793          	li	a5,34
+ 80067c0:	00098593          	mv	a1,s3
+ 80067c4:	00f72023          	sw	a5,0(a4)
+ 80067c8:	f60a88e3          	beqz	s5,8006738 <_strtol_l.isra.0+0x144>
+ 80067cc:	fff48a13          	addi	s4,s1,-1
+ 80067d0:	00098593          	mv	a1,s3
+ 80067d4:	014aa023          	sw	s4,0(s5)
+ 80067d8:	f61ff06f          	j	8006738 <_strtol_l.isra.0+0x144>
+ 80067dc:	0004c403          	lbu	s0,0(s1)
+ 80067e0:	00100b93          	li	s7,1
+ 80067e4:	00278493          	addi	s1,a5,2
+ 80067e8:	e95ff06f          	j	800667c <_strtol_l.isra.0+0x88>
+ 80067ec:	03000793          	li	a5,48
+ 80067f0:	00f41a63          	bne	s0,a5,8006804 <_strtol_l.isra.0+0x210>
+ 80067f4:	0004c783          	lbu	a5,0(s1)
+ 80067f8:	05800713          	li	a4,88
+ 80067fc:	0df7f793          	andi	a5,a5,223
+ 8006800:	02e78663          	beq	a5,a4,800682c <_strtol_l.isra.0+0x238>
+ 8006804:	01000913          	li	s2,16
+ 8006808:	e85ff06f          	j	800668c <_strtol_l.isra.0+0x98>
+ 800680c:	00058993          	mv	s3,a1
+ 8006810:	fbdff06f          	j	80067cc <_strtol_l.isra.0+0x1d8>
+ 8006814:	0004c783          	lbu	a5,0(s1)
+ 8006818:	05800713          	li	a4,88
+ 800681c:	00800913          	li	s2,8
+ 8006820:	0df7f793          	andi	a5,a5,223
+ 8006824:	00800c93          	li	s9,8
+ 8006828:	e6e792e3          	bne	a5,a4,800668c <_strtol_l.isra.0+0x98>
+ 800682c:	0014c403          	lbu	s0,1(s1)
+ 8006830:	01000913          	li	s2,16
+ 8006834:	00248493          	addi	s1,s1,2
+ 8006838:	01000c93          	li	s9,16
+ 800683c:	e51ff06f          	j	800668c <_strtol_l.isra.0+0x98>
 
-08005640 <_strtol_r>:
+08006840 <_strtol_r>:
 _strtol_r():
- 8005640:	db5ff06f          	j	80053f4 <_strtol_l.isra.0>
+ 8006840:	db5ff06f          	j	80065f4 <_strtol_l.isra.0>
 
-08005644 <strtol_l>:
+08006844 <strtol_l>:
 strtol_l():
- 8005644:	00000797          	auipc	a5,0x0
- 8005648:	71478793          	addi	a5,a5,1812 # 8005d58 <_impure_ptr>
- 800564c:	00060693          	mv	a3,a2
- 8005650:	00058613          	mv	a2,a1
- 8005654:	00050593          	mv	a1,a0
- 8005658:	0007a503          	lw	a0,0(a5)
- 800565c:	d99ff06f          	j	80053f4 <_strtol_l.isra.0>
+ 8006844:	00000797          	auipc	a5,0x0
+ 8006848:	71478793          	addi	a5,a5,1812 # 8006f58 <_impure_ptr>
+ 800684c:	00060693          	mv	a3,a2
+ 8006850:	00058613          	mv	a2,a1
+ 8006854:	00050593          	mv	a1,a0
+ 8006858:	0007a503          	lw	a0,0(a5)
+ 800685c:	d99ff06f          	j	80065f4 <_strtol_l.isra.0>
 
-08005660 <strtol>:
+08006860 <strtol>:
 strtol():
- 8005660:	00000797          	auipc	a5,0x0
- 8005664:	6f878793          	addi	a5,a5,1784 # 8005d58 <_impure_ptr>
- 8005668:	00060693          	mv	a3,a2
- 800566c:	00058613          	mv	a2,a1
- 8005670:	00050593          	mv	a1,a0
- 8005674:	0007a503          	lw	a0,0(a5)
- 8005678:	d7dff06f          	j	80053f4 <_strtol_l.isra.0>
+ 8006860:	00000797          	auipc	a5,0x0
+ 8006864:	6f878793          	addi	a5,a5,1784 # 8006f58 <_impure_ptr>
+ 8006868:	00060693          	mv	a3,a2
+ 800686c:	00058613          	mv	a2,a1
+ 8006870:	00050593          	mv	a1,a0
+ 8006874:	0007a503          	lw	a0,0(a5)
+ 8006878:	d7dff06f          	j	80065f4 <_strtol_l.isra.0>
 
-0800567c <__mulsi3>:
+0800687c <__mulsi3>:
 __mulsi3():
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/muldi3.S:37
- 800567c:	00050613          	mv	a2,a0
+ 800687c:	00050613          	mv	a2,a0
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/muldi3.S:38
- 8005680:	00000513          	li	a0,0
+ 8006880:	00000513          	li	a0,0
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/muldi3.S:40
- 8005684:	0015f693          	andi	a3,a1,1
+ 8006884:	0015f693          	andi	a3,a1,1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/muldi3.S:41
- 8005688:	00068463          	beqz	a3,8005690 <__mulsi3+0x14>
+ 8006888:	00068463          	beqz	a3,8006890 <__mulsi3+0x14>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/muldi3.S:42
- 800568c:	00c50533          	add	a0,a0,a2
+ 800688c:	00c50533          	add	a0,a0,a2
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/muldi3.S:44
- 8005690:	0015d593          	srli	a1,a1,0x1
+ 8006890:	0015d593          	srli	a1,a1,0x1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/muldi3.S:45
- 8005694:	00161613          	slli	a2,a2,0x1
+ 8006894:	00161613          	slli	a2,a2,0x1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/muldi3.S:46
- 8005698:	fe0596e3          	bnez	a1,8005684 <__mulsi3+0x8>
+ 8006898:	fe0596e3          	bnez	a1,8006884 <__mulsi3+0x8>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/muldi3.S:47
- 800569c:	00008067          	ret
+ 800689c:	00008067          	ret
 
-080056a0 <__divsi3>:
+080068a0 <__divsi3>:
 __divsi3():
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:69
- 80056a0:	06054063          	bltz	a0,8005700 <__umodsi3+0x10>
+ 80068a0:	06054063          	bltz	a0,8006900 <__umodsi3+0x10>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:70
- 80056a4:	0605c663          	bltz	a1,8005710 <__umodsi3+0x20>
+ 80068a4:	0605c663          	bltz	a1,8006910 <__umodsi3+0x20>
 
-080056a8 <__udivsi3>:
+080068a8 <__udivsi3>:
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:74
- 80056a8:	00058613          	mv	a2,a1
+ 80068a8:	00058613          	mv	a2,a1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:75
- 80056ac:	00050593          	mv	a1,a0
+ 80068ac:	00050593          	mv	a1,a0
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:76
- 80056b0:	fff00513          	li	a0,-1
+ 80068b0:	fff00513          	li	a0,-1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:77
- 80056b4:	02060c63          	beqz	a2,80056ec <__udivsi3+0x44>
+ 80068b4:	02060c63          	beqz	a2,80068ec <__udivsi3+0x44>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:78
- 80056b8:	00100693          	li	a3,1
+ 80068b8:	00100693          	li	a3,1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:79
- 80056bc:	00b67a63          	bgeu	a2,a1,80056d0 <__udivsi3+0x28>
+ 80068bc:	00b67a63          	bgeu	a2,a1,80068d0 <__udivsi3+0x28>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:81
- 80056c0:	00c05863          	blez	a2,80056d0 <__udivsi3+0x28>
+ 80068c0:	00c05863          	blez	a2,80068d0 <__udivsi3+0x28>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:82
- 80056c4:	00161613          	slli	a2,a2,0x1
+ 80068c4:	00161613          	slli	a2,a2,0x1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:83
- 80056c8:	00169693          	slli	a3,a3,0x1
+ 80068c8:	00169693          	slli	a3,a3,0x1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:84
- 80056cc:	feb66ae3          	bltu	a2,a1,80056c0 <__udivsi3+0x18>
+ 80068cc:	feb66ae3          	bltu	a2,a1,80068c0 <__udivsi3+0x18>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:86
- 80056d0:	00000513          	li	a0,0
+ 80068d0:	00000513          	li	a0,0
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:88
- 80056d4:	00c5e663          	bltu	a1,a2,80056e0 <__udivsi3+0x38>
+ 80068d4:	00c5e663          	bltu	a1,a2,80068e0 <__udivsi3+0x38>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:89
- 80056d8:	40c585b3          	sub	a1,a1,a2
+ 80068d8:	40c585b3          	sub	a1,a1,a2
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:90
- 80056dc:	00d56533          	or	a0,a0,a3
+ 80068dc:	00d56533          	or	a0,a0,a3
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:92
- 80056e0:	0016d693          	srli	a3,a3,0x1
+ 80068e0:	0016d693          	srli	a3,a3,0x1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:93
- 80056e4:	00165613          	srli	a2,a2,0x1
+ 80068e4:	00165613          	srli	a2,a2,0x1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:94
- 80056e8:	fe0696e3          	bnez	a3,80056d4 <__udivsi3+0x2c>
+ 80068e8:	fe0696e3          	bnez	a3,80068d4 <__udivsi3+0x2c>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:96
- 80056ec:	00008067          	ret
+ 80068ec:	00008067          	ret
 
-080056f0 <__umodsi3>:
+080068f0 <__umodsi3>:
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:101
- 80056f0:	00008293          	mv	t0,ra
+ 80068f0:	00008293          	mv	t0,ra
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:102
- 80056f4:	fb5ff0ef          	jal	ra,80056a8 <__udivsi3>
+ 80068f4:	fb5ff0ef          	jal	ra,80068a8 <__udivsi3>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:103
- 80056f8:	00058513          	mv	a0,a1
+ 80068f8:	00058513          	mv	a0,a1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:104
- 80056fc:	00028067          	jr	t0
+ 80068fc:	00028067          	jr	t0
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:109
- 8005700:	40a00533          	neg	a0,a0
+ 8006900:	40a00533          	neg	a0,a0
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:110
- 8005704:	0005d863          	bgez	a1,8005714 <__umodsi3+0x24>
+ 8006904:	0005d863          	bgez	a1,8006914 <__umodsi3+0x24>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:111
- 8005708:	40b005b3          	neg	a1,a1
+ 8006908:	40b005b3          	neg	a1,a1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:112
- 800570c:	f9dff06f          	j	80056a8 <__udivsi3>
+ 800690c:	f9dff06f          	j	80068a8 <__udivsi3>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:114
- 8005710:	40b005b3          	neg	a1,a1
+ 8006910:	40b005b3          	neg	a1,a1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:116
- 8005714:	00008293          	mv	t0,ra
+ 8006914:	00008293          	mv	t0,ra
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:117
- 8005718:	f91ff0ef          	jal	ra,80056a8 <__udivsi3>
+ 8006918:	f91ff0ef          	jal	ra,80068a8 <__udivsi3>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:118
- 800571c:	40a00533          	neg	a0,a0
+ 800691c:	40a00533          	neg	a0,a0
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:119
- 8005720:	00028067          	jr	t0
+ 8006920:	00028067          	jr	t0
 
-08005724 <__modsi3>:
+08006924 <__modsi3>:
 __modsi3():
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:123
- 8005724:	00008293          	mv	t0,ra
+ 8006924:	00008293          	mv	t0,ra
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:124
- 8005728:	0005ca63          	bltz	a1,800573c <__modsi3+0x18>
+ 8006928:	0005ca63          	bltz	a1,800693c <__modsi3+0x18>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:125
- 800572c:	00054c63          	bltz	a0,8005744 <__modsi3+0x20>
+ 800692c:	00054c63          	bltz	a0,8006944 <__modsi3+0x20>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:127
- 8005730:	f79ff0ef          	jal	ra,80056a8 <__udivsi3>
+ 8006930:	f79ff0ef          	jal	ra,80068a8 <__udivsi3>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:128
- 8005734:	00058513          	mv	a0,a1
+ 8006934:	00058513          	mv	a0,a1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:129
- 8005738:	00028067          	jr	t0
+ 8006938:	00028067          	jr	t0
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:131
- 800573c:	40b005b3          	neg	a1,a1
+ 800693c:	40b005b3          	neg	a1,a1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:132
- 8005740:	fe0558e3          	bgez	a0,8005730 <__modsi3+0xc>
+ 8006940:	fe0558e3          	bgez	a0,8006930 <__modsi3+0xc>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:134
- 8005744:	40a00533          	neg	a0,a0
+ 8006944:	40a00533          	neg	a0,a0
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:135
- 8005748:	f61ff0ef          	jal	ra,80056a8 <__udivsi3>
+ 8006948:	f61ff0ef          	jal	ra,80068a8 <__udivsi3>
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:136
- 800574c:	40b00533          	neg	a0,a1
+ 800694c:	40b00533          	neg	a0,a1
 /scratch/jenkins/workspace/tpp-freedom-tools/tpp03--build-binary-packages--parameterized/obj/x86_64-linux-ubuntu14/build/riscv-gnu-toolchain/build-gcc-newlib-stage2/riscv64-unknown-elf/rv32i/ilp32/libgcc/../../../../../riscv-gcc/libgcc/config/riscv/div.S:137
- 8005750:	00028067          	jr	t0
+ 8006950:	00028067          	jr	t0

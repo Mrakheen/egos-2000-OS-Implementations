@@ -3,126 +3,126 @@ build/release/ps.elf:     file format elf32-littleriscv
 build/release/ps.elf
 architecture: riscv:rv32, flags 0x00000112:
 EXEC_P, HAS_SYMS, D_PAGED
-start address 0x08005000
+start address 0x08006200
 
 Program Header:
-    LOAD off    0x00001000 vaddr 0x08005000 paddr 0x08005000 align 2**12
+    LOAD off    0x00000200 vaddr 0x08006200 paddr 0x08006200 align 2**12
          filesz 0x00000170 memsz 0x00000970 flags rwx
 
 Sections:
 Idx Name              Size      VMA       LMA       File off  Algn  Flags
-  0 .text             0000013c  08005000  08005000  00001000  2**3  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .rodata           00000028  08005140  08005140  00001140  2**3  CONTENTS, ALLOC, LOAD, READONLY, DATA
-  2 .data             00000008  08005168  08005168  00001168  2**3  CONTENTS, ALLOC, LOAD, DATA
-  3 .heap             00000800  08005170  08005170  00001170  2**3  ALLOC
-  4 .riscv.attributes 0000001c  00000000  00000000  00001170  2**0  CONTENTS, READONLY
-  5 .comment          00000028  00000000  00000000  0000118c  2**0  CONTENTS, READONLY
+  0 .text             0000013c  08006200  08006200  00000200  2**3  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .rodata           00000028  08006340  08006340  00000340  2**3  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .data             00000008  08006368  08006368  00000368  2**3  CONTENTS, ALLOC, LOAD, DATA
+  3 .heap             00000800  08006370  08006370  00000370  2**3  ALLOC
+  4 .riscv.attributes 0000001c  00000000  00000000  00000370  2**0  CONTENTS, READONLY
+  5 .comment          00000028  00000000  00000000  0000038c  2**0  CONTENTS, READONLY
 SYMBOL TABLE:
-08005000 l    d  .text	00000000 .text
-08005140 l    d  .rodata	00000000 .rodata
-08005168 l    d  .data	00000000 .data
-08005170 l    d  .heap	00000000 .heap
+08006200 l    d  .text	00000000 .text
+08006340 l    d  .rodata	00000000 .rodata
+08006368 l    d  .data	00000000 .data
+08006370 l    d  .heap	00000000 .heap
 00000000 l    d  .riscv.attributes	00000000 .riscv.attributes
 00000000 l    d  .comment	00000000 .comment
 00000000 l    df *ABS*	00000000 servers.c
 00000000 l    df *ABS*	00000000 ps.c
-0800516c g     O .data	00000004 earth
+0800636c g     O .data	00000004 earth
 00000800 g       *ABS*	00000000 __heap_size
-08005168 g     O .data	00000004 grass
-0800503c g     F .text	00000100 main
-08005000 g       .text	00000000 _enter
+08006368 g     O .data	00000004 grass
+0800623c g     F .text	00000100 main
+08006200 g       .text	00000000 _enter
 08008000 g       *ABS*	00000000 __heap_end
-08005170 g       .heap	00000000 __heap_start
-08005010 g     F .text	0000002c exit
+08006370 g       .heap	00000000 __heap_start
+08006210 g     F .text	0000002c exit
 
 
 
 Disassembly of section .text:
 
-08005000 <_enter>:
+08006200 <_enter>:
 _enter():
- 8005000:	00052503          	lw	a0,0(a0)
- 8005004:	80002137          	lui	sp,0x80002
- 8005008:	034000ef          	jal	ra,800503c <main>
- 800500c:	004000ef          	jal	ra,8005010 <exit>
+ 8006200:	00052503          	lw	a0,0(a0)
+ 8006204:	80002137          	lui	sp,0x80002
+ 8006208:	034000ef          	jal	ra,800623c <main>
+ 800620c:	004000ef          	jal	ra,8006210 <exit>
 
-08005010 <exit>:
+08006210 <exit>:
 exit():
- 8005010:	fe010113          	addi	sp,sp,-32 # 80001fe0 <__heap_end+0x77ff9fe0>
- 8005014:	00112e23          	sw	ra,28(sp)
- 8005018:	00812c23          	sw	s0,24(sp)
- 800501c:	02010413          	addi	s0,sp,32
- 8005020:	fea42623          	sw	a0,-20(s0)
- 8005024:	080057b7          	lui	a5,0x8005
- 8005028:	1687a783          	lw	a5,360(a5) # 8005168 <grass>
- 800502c:	0a47a783          	lw	a5,164(a5)
- 8005030:	fec42503          	lw	a0,-20(s0)
- 8005034:	000780e7          	jalr	a5
- 8005038:	0000006f          	j	8005038 <exit+0x28>
+ 8006210:	fe010113          	addi	sp,sp,-32 # 80001fe0 <__heap_end+0x77ff9fe0>
+ 8006214:	00112e23          	sw	ra,28(sp)
+ 8006218:	00812c23          	sw	s0,24(sp)
+ 800621c:	02010413          	addi	s0,sp,32
+ 8006220:	fea42623          	sw	a0,-20(s0)
+ 8006224:	080067b7          	lui	a5,0x8006
+ 8006228:	3687a783          	lw	a5,872(a5) # 8006368 <grass>
+ 800622c:	0a47a783          	lw	a5,164(a5)
+ 8006230:	fec42503          	lw	a0,-20(s0)
+ 8006234:	000780e7          	jalr	a5
+ 8006238:	0000006f          	j	8006238 <exit+0x28>
 
-0800503c <main>:
+0800623c <main>:
 main():
- 800503c:	fd010113          	addi	sp,sp,-48
- 8005040:	02112623          	sw	ra,44(sp)
- 8005044:	02812423          	sw	s0,40(sp)
- 8005048:	03010413          	addi	s0,sp,48
- 800504c:	fca42e23          	sw	a0,-36(s0)
- 8005050:	fcb42c23          	sw	a1,-40(s0)
- 8005054:	080057b7          	lui	a5,0x8005
- 8005058:	1687a783          	lw	a5,360(a5) # 8005168 <grass>
- 800505c:	09c7a783          	lw	a5,156(a5)
- 8005060:	000780e7          	jalr	a5
- 8005064:	fea42423          	sw	a0,-24(s0)
- 8005068:	080057b7          	lui	a5,0x8005
- 800506c:	16c7a783          	lw	a5,364(a5) # 800516c <earth>
- 8005070:	0347a703          	lw	a4,52(a5)
- 8005074:	080057b7          	lui	a5,0x8005
- 8005078:	14078513          	addi	a0,a5,320 # 8005140 <main+0x104>
- 800507c:	000700e7          	jalr	a4
- 8005080:	fe042623          	sw	zero,-20(s0)
- 8005084:	0940006f          	j	8005118 <main+0xdc>
- 8005088:	fec42783          	lw	a5,-20(s0)
- 800508c:	00579793          	slli	a5,a5,0x5
- 8005090:	fe842703          	lw	a4,-24(s0)
- 8005094:	00f707b3          	add	a5,a4,a5
- 8005098:	0047a783          	lw	a5,4(a5)
- 800509c:	06078863          	beqz	a5,800510c <main+0xd0>
- 80050a0:	080057b7          	lui	a5,0x8005
- 80050a4:	16c7a783          	lw	a5,364(a5) # 800516c <earth>
- 80050a8:	0347a803          	lw	a6,52(a5)
- 80050ac:	fec42783          	lw	a5,-20(s0)
- 80050b0:	00579793          	slli	a5,a5,0x5
- 80050b4:	fe842703          	lw	a4,-24(s0)
- 80050b8:	00f707b3          	add	a5,a4,a5
- 80050bc:	0007a583          	lw	a1,0(a5)
- 80050c0:	fec42783          	lw	a5,-20(s0)
- 80050c4:	00579793          	slli	a5,a5,0x5
- 80050c8:	fe842703          	lw	a4,-24(s0)
- 80050cc:	00f707b3          	add	a5,a4,a5
- 80050d0:	0047a603          	lw	a2,4(a5)
- 80050d4:	fec42783          	lw	a5,-20(s0)
- 80050d8:	00579793          	slli	a5,a5,0x5
- 80050dc:	fe842703          	lw	a4,-24(s0)
- 80050e0:	00f707b3          	add	a5,a4,a5
- 80050e4:	0187a683          	lw	a3,24(a5)
- 80050e8:	fec42783          	lw	a5,-20(s0)
- 80050ec:	00579793          	slli	a5,a5,0x5
- 80050f0:	fe842703          	lw	a4,-24(s0)
- 80050f4:	00f707b3          	add	a5,a4,a5
- 80050f8:	0147a783          	lw	a5,20(a5)
- 80050fc:	00078713          	mv	a4,a5
- 8005100:	080057b7          	lui	a5,0x8005
- 8005104:	15478513          	addi	a0,a5,340 # 8005154 <main+0x118>
- 8005108:	000800e7          	jalr	a6
- 800510c:	fec42783          	lw	a5,-20(s0)
- 8005110:	00178793          	addi	a5,a5,1
- 8005114:	fef42623          	sw	a5,-20(s0)
- 8005118:	fec42703          	lw	a4,-20(s0)
- 800511c:	00f00793          	li	a5,15
- 8005120:	f6e7d4e3          	bge	a5,a4,8005088 <main+0x4c>
- 8005124:	00000793          	li	a5,0
- 8005128:	00078513          	mv	a0,a5
- 800512c:	02c12083          	lw	ra,44(sp)
- 8005130:	02812403          	lw	s0,40(sp)
- 8005134:	03010113          	addi	sp,sp,48
- 8005138:	00008067          	ret
+ 800623c:	fd010113          	addi	sp,sp,-48
+ 8006240:	02112623          	sw	ra,44(sp)
+ 8006244:	02812423          	sw	s0,40(sp)
+ 8006248:	03010413          	addi	s0,sp,48
+ 800624c:	fca42e23          	sw	a0,-36(s0)
+ 8006250:	fcb42c23          	sw	a1,-40(s0)
+ 8006254:	080067b7          	lui	a5,0x8006
+ 8006258:	3687a783          	lw	a5,872(a5) # 8006368 <grass>
+ 800625c:	09c7a783          	lw	a5,156(a5)
+ 8006260:	000780e7          	jalr	a5
+ 8006264:	fea42423          	sw	a0,-24(s0)
+ 8006268:	080067b7          	lui	a5,0x8006
+ 800626c:	36c7a783          	lw	a5,876(a5) # 800636c <earth>
+ 8006270:	0347a703          	lw	a4,52(a5)
+ 8006274:	080067b7          	lui	a5,0x8006
+ 8006278:	34078513          	addi	a0,a5,832 # 8006340 <main+0x104>
+ 800627c:	000700e7          	jalr	a4
+ 8006280:	fe042623          	sw	zero,-20(s0)
+ 8006284:	0940006f          	j	8006318 <main+0xdc>
+ 8006288:	fec42783          	lw	a5,-20(s0)
+ 800628c:	00579793          	slli	a5,a5,0x5
+ 8006290:	fe842703          	lw	a4,-24(s0)
+ 8006294:	00f707b3          	add	a5,a4,a5
+ 8006298:	0047a783          	lw	a5,4(a5)
+ 800629c:	06078863          	beqz	a5,800630c <main+0xd0>
+ 80062a0:	080067b7          	lui	a5,0x8006
+ 80062a4:	36c7a783          	lw	a5,876(a5) # 800636c <earth>
+ 80062a8:	0347a803          	lw	a6,52(a5)
+ 80062ac:	fec42783          	lw	a5,-20(s0)
+ 80062b0:	00579793          	slli	a5,a5,0x5
+ 80062b4:	fe842703          	lw	a4,-24(s0)
+ 80062b8:	00f707b3          	add	a5,a4,a5
+ 80062bc:	0007a583          	lw	a1,0(a5)
+ 80062c0:	fec42783          	lw	a5,-20(s0)
+ 80062c4:	00579793          	slli	a5,a5,0x5
+ 80062c8:	fe842703          	lw	a4,-24(s0)
+ 80062cc:	00f707b3          	add	a5,a4,a5
+ 80062d0:	0047a603          	lw	a2,4(a5)
+ 80062d4:	fec42783          	lw	a5,-20(s0)
+ 80062d8:	00579793          	slli	a5,a5,0x5
+ 80062dc:	fe842703          	lw	a4,-24(s0)
+ 80062e0:	00f707b3          	add	a5,a4,a5
+ 80062e4:	0187a683          	lw	a3,24(a5)
+ 80062e8:	fec42783          	lw	a5,-20(s0)
+ 80062ec:	00579793          	slli	a5,a5,0x5
+ 80062f0:	fe842703          	lw	a4,-24(s0)
+ 80062f4:	00f707b3          	add	a5,a4,a5
+ 80062f8:	0147a783          	lw	a5,20(a5)
+ 80062fc:	00078713          	mv	a4,a5
+ 8006300:	080067b7          	lui	a5,0x8006
+ 8006304:	35478513          	addi	a0,a5,852 # 8006354 <main+0x118>
+ 8006308:	000800e7          	jalr	a6
+ 800630c:	fec42783          	lw	a5,-20(s0)
+ 8006310:	00178793          	addi	a5,a5,1
+ 8006314:	fef42623          	sw	a5,-20(s0)
+ 8006318:	fec42703          	lw	a4,-20(s0)
+ 800631c:	00f00793          	li	a5,15
+ 8006320:	f6e7d4e3          	bge	a5,a4,8006288 <main+0x4c>
+ 8006324:	00000793          	li	a5,0
+ 8006328:	00078513          	mv	a0,a5
+ 800632c:	02c12083          	lw	ra,44(sp)
+ 8006330:	02812403          	lw	s0,40(sp)
+ 8006334:	03010113          	addi	sp,sp,48
+ 8006338:	00008067          	ret

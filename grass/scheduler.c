@@ -11,7 +11,6 @@
 #include "egos.h"
 #include "process.h"
 #include "syscall.h"
-//#include "queue.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -36,7 +35,7 @@ void intr_entry(int id) {
     if (curr_pid >= GPID_USER_START && earth->tty_intr()) {
         /* User process killed by ctrl+c interrupt */
         INFO("process %d killed by interrupt", curr_pid);
-        asm("csrw mepc, %0" ::"r"(0x800500C));
+        asm("csrw mepc, %0" ::"r"(0x800620C));
         return;
     }
 
@@ -96,7 +95,7 @@ static void proc_yield() {
         //Lottery Scheduler
         int total_tickets = 0;
         int runnable_processes = 0;
-        for (int i = 0; i < MAX_NPROCESS; i++) {
+        for (int i = 1; i <= MAX_NPROCESS; i++) {
             int s = proc_set[i].status;
             if (s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
                 total_tickets += proc_set[i].num_of_Tickets;
@@ -114,22 +113,19 @@ static void proc_yield() {
 
             int cumulative_tickets = 0;
 
-            int j=0;
-            while(j < MAX_NPROCESS) {
-                int s = proc_set[j].status;
-                if (s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
-                    cumulative_tickets += proc_set[j].num_of_Tickets;
-                    if (cumulative_tickets > winning_ticket) {
-                        next_idx = j;
-                        break;
+            while(next_idx == -1){
+                for (int i = 1; i <= MAX_NPROCESS; i++) {
+                    int s = proc_set[i].status;
+                    if (s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
+                        cumulative_tickets += proc_set[i].num_of_Tickets;
+                        if (cumulative_tickets > winning_ticket) {
+                            next_idx = i;
+                            break;
+                        }
                     }
                 }
-                j++;
-
-                if(j >= MAX_NPROCESS && next_idx == -1){
-                    j=0;
-                }
             }
+            
         }
                 
    #endif
