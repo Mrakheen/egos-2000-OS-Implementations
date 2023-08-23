@@ -11,7 +11,6 @@
 #include "egos.h"
 #include "process.h"
 #include "syscall.h"
-#include <stdlib.h>
 #include <string.h>
 
 #define INTR_ID_SOFT       3
@@ -107,21 +106,30 @@ static void proc_yield() {
             // Perform a lottery draw for winning ticket
             int random=0;
             while(random == 0 || random > total_tickets || random < 0){
-                random = rand();
+                random = Rand();
             }
             int winning_ticket = random % total_tickets;
 
             int cumulative_tickets = 0;
 
             while(next_idx == -1){
+            
                 for (int i = 1; i <= MAX_NPROCESS; i++) {
-                    int s = proc_set[i].status;
-                    if (s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
+                    int s = proc_set[(proc_curr_idx + i) % MAX_NPROCESS].status;
+                    //Lottery Scheduling for all non-kernel processes
+                    if (proc_set[i].priLevel != 1 && s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
                         cumulative_tickets += proc_set[i].num_of_Tickets;
                         if (cumulative_tickets > winning_ticket) {
                             next_idx = i;
+                            proc_set[i].numOfContext++;
                             break;
                         }
+                    }
+                    //Round Robin Scheduling used for all kernel process
+                    if (proc_set[i].priLevel == 1 && s == PROC_READY || s == PROC_RUNNING || s == PROC_RUNNABLE) {
+                        next_idx = (proc_curr_idx + i) % MAX_NPROCESS;
+                        proc_set[i].numOfContext++;
+                        break;
                     }
                 }
             }
@@ -233,6 +241,17 @@ static void proc_syscall() {
     default:
         FATAL("proc_syscall: got unknown syscall type=%d", type);
     }
+}
+
+
+unsigned int seed = 12345; 
+unsigned int Rand() {
+    const unsigned int a = 1664525; // Multiplier
+    const unsigned int c = 1013904223; // Increment
+    const unsigned int m = 0xFFFFFFFF; // Modulus (32-bit max value)
+
+    seed = (a * seed + c) % m;
+    return seed % 32768; // Generates a random number between 0 and 32767
 }
 
 

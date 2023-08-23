@@ -27,9 +27,6 @@ int main(int argc, char* argv[]) {
     set_prio(pid, priority);
 
     for (int i = 1; i < iterations; i++) {
-        for (int j = 0; j < 100000000; j++) {
-            // Delay loop for simulating delay without sleep function
-        }
         write(1, "PID: ", 5);
         write(1, pidStr, strLen(pidStr));
         write(1, "\n", 1);
