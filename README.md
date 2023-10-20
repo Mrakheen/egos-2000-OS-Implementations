@@ -114,6 +114,4 @@ Your program source code is to be turned in via the Feedback GitHub pull request
 
 ## Administrative
 
-This assignment must be coded in C. Any other language will result in 0 points. Your programs will be compiled and graded on the course GitHub Codespace. Code that does not compile with the provided makefile will result in a 0.
-
-
+This assignment must be coded in C. 
