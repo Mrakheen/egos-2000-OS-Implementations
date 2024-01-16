@@ -1,5 +1,5 @@
 ## Vision
-## the Implementation Code has been built and run on GitHub Codespaces
+## _the Implementation Code has been built and run on GitHub Codespaces_
 With only **2000** lines of code, egos-2000 implements every component of an operating system for education. 
 It can run on a RISC-V board and also the QEMU software emulator.
 
